@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- -->
+<div class="parent">
+      
+    
+  <table  class ="table"  width="1000" height="300">  
+      
+    <h1 >РЕЗИСТИВНЫЙ ДЕЛИТЕЛЬ НАПРЯЖЕНИЯ</h1>
+      
+      <!--  border="1"  -->
+      
+    <tr>
+  
+
+  
+  
+      <th>  
+        <img src="\\wsl.localhost\Ubuntu\home\barvv\workout\Expi\260823\res.png" alt="Resistor Devider">
+      </th>
+
+
+      <th>  
+          <form id="form">
+
+
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px;">
+                <label for="input_voltage_show"  >Входное напряжение Uвх</label>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="input_voltage" required>  <b>В</b>
+              </div>
+
+
+        
+
+
+
+              <div style="margin-bottom: 10px;">
+                <label for="resistance_1" id="resistance_1_lab">Сопротивление R1</label>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r1" required>  <b>Ом</b>
+              </div>
+
+
+
+
+
+              <div style="margin-bottom: 10px;">
+                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R2</label>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r2" required>  <b>Ом</b>
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+          <div class="button-row" id="button_style">
+              <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+
+              <button class="button" type="reset" id="button_ochistit">Очистить</button>
+          </div>
+
+
+
+                
+            <div class="answers_style_edition" id="answers">
+
+              <div style="margin-bottom: 10px; margin-top: 10px;">
+                <label for="output_voltage_show">Выходное напряжение Uвых</label> 
+              </div>
+                <!-- 
+                <b id="result">0</b>
+                -->
+
+                
+                  <input type="number" name="total" id="total" style="width: 150px; height: 20px;"/>
+                
+
+
+                
+                  <select name="select" style="max-width:70%;" id = "out_volt">
+                    <option атрибуты>мВ</option>
+                    <option атрибуты>В</option> 
+                    <option атрибуты>кВ</option> 
+                  </select>
+                
+
+
+
+                <div style="margin-bottom: 10px; margin-top: 20px;">
+                  <label for="output_current_show">Ток через делитель I</label> 
+                </div>
+
+
+              <!-- 
+                <b id="result_current">0</b>
+              -->
+
+              <input type="number" name="total_cur" id="total_cur" style="width: 150px; height: 20px;"/>
+                
+
+                
+                  <select name="select" style="max-width:90%;" id = "out_cur">
+                    <option атрибуты>мкА</option> 
+                    <option атрибуты>мА</option> 
+                    <option атрибуты>А</option> 
+                  </select>
+                
+
+            </div>
+
+
+
+
+      
+
+          </form>
+      </th>
+
+    </tr>
+
+
+
+
+    
+
+
+  </table>
+
+
+
+</div>
+
+  <!--    
+<div class="calculator__step-title" >
+<div >Внесите свои данные:</div>
+<div class="data">
+    <div class="data__block">
+        <div class="data__block-item">
+            <label for="age">Ваш возраст</label>
+            <input id="age" type="number" name="age" min="1" max="120">
+        </div>
+        <div class="data__block-item">
+            <label for="growth">Ваш рост</label>
+            <input id="growth" type="number" name="growth" min="1" max="120">
+        </div>
+        <div class="data__block-item">
+            <label for="weight">Ваш вес</label>
+            <input id="weight" type="number" name="weight" min="1" max="120">
+        </div>
+ 
+    </div>
+    <button type="submit" id="step-result" class="calculator-btn disabled" disabled>Рассчитать норму калорий</button>
+</div>
+</div>
+-->
+
+
+      <script src="src.js"></script>
+
+
+
+
+</body>
+</html>

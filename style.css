@@ -1,0 +1,264 @@
+.parent {
+    text-align: center;
+    
+  }
+  
+  
+  
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #3ebcf7;
+    text-transform: uppercase;
+    
+    text-shadow: 1px 1px 0px #957dad,
+  
+  
+                 1px 2px 0px #957dad,
+  
+                 1px 3px 0px #957dad,
+                 1px 4px 0px #957dad,
+                 1px 5px 0px #957dad,
+                 
+  
+                 1px 6px 0px #957dad;
+  
+  /*
+                 1px 10px 5px rgba(16, 16, 16, 0.5),
+                 1px 15px 10px rgba(16, 16, 16, 0.4),
+  
+                 
+                 1px 20px 30px rgba(16, 16, 16, 0.3),
+                 1px 25px 50px rgba(16, 16, 16, 0.2);
+                 */
+  }
+  
+  
+  
+  /*
+  .calculator__step-title {
+  
+    
+    border-radius: 10px;
+    box-shadow: 0 0 7px 3px #3ae0e6;
+    text-indent: 30px;
+    padding: 10px 20px 10px 20px;
+    margin: 20px auto;
+    width: 400px;
+    background: #ffffff;
+  
+  
+    
+  }
+  */
+  
+  
+  
+  
+  
+  .button {
+      display: inline-block;
+      background: #46cbff;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 100;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.5s;
+    }
+  
+  
+  
+  
+    .button:hover {
+      background-color: #2c39f3; /* Цвет фона при наведении */
+     }
+  
+  
+    .button-row {
+      display: inline-block;
+      /*margin-right: 50px; */
+    }
+  
+  
+  
+    .answers_style_edition {
+      text-align: left;
+  
+      border-radius: 10px;
+      box-shadow: 0 0 7px 3px #d1d6d6;
+     /* text-indent: 30px;*/
+      padding: 10px 20px 10px 20px;
+      margin: 20px;
+      width: 250px;
+      background: #ffffff;
+    }
+  
+  
+  
+  
+  
+     #button_style {
+      text-align: center;
+  
+     }
+  
+  
+     #button_rasschitat {
+      
+      /*margin-left:100px;*/
+      width: 100px;
+      height: 35px;
+      /*margin: 10px;*/
+     }
+  
+  
+     #button_ochistit {
+     /* margin-left:100px;*/
+      width: 100px;
+      height: 35px;
+     /* margin: 10px;*/
+     }
+  
+  
+  
+  /*
+     #input_voltage {
+      resize: none;
+      width: 100px;
+      height: 10px;
+   
+      
+      background: #f6f6f6;
+      border: 1px solid #cecece;
+      border-radius: 8px 0 0 0;
+      padding: 8px 0 8px 10px;
+     }
+  */
+  
+     .form_style {
+      resize: none;
+      width: 200px;
+      height: 10px;
+   
+      
+      background: #f6f6f6;
+      border: 1px solid #cecece;
+      /*border-radius: 8px 0 0 0;*/
+      padding: 8px 0 8px 10px;
+     }
+     
+  
+  
+     .forms_style_edition {
+      text-align: left;
+  
+      border-radius: 10px;
+      box-shadow: 0 0 7px 3px #d1d6d6;
+     /* text-indent: 30px;*/
+      padding: 10px 20px 10px 20px;
+      margin: 20px;
+      width: 250px;
+      background: #ffffff;
+  
+     }
+  
+  
+  
+  
+    .table {
+      /*margin: auto;*/
+      /*
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+  */
+  
+  
+      border-radius: 10px;
+      box-shadow: 0 0 7px 3px #3ae0e6;
+  
+  
+     /* text-indent: 30px;*/
+  
+     
+      padding: 10px 20px 10px 20px;
+      margin: 20px auto;
+      width: 500px;
+      background: #ffffff;
+      
+    }
+  
+  /*
+  #answers {
+    text-align: left;
+  }
+  */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    form {
+      overflow: hidden;
+    }
+    p {
+      float: right;
+      
+      clear: both;
+    }
+  
+    select {
+      width: 60px; /* Ширина списка в пикселах */
+     }
+  
+     #adde {
+      width: 60px; /* Ширина списка в пикселах */
+     }
+  
+  
+  
+     #second {
+      /*color: red;*/
+      text-align: right;
+    }
+  
+  
+  
+  
+    /*Убирает стрелочки в формах ввода*/
+    /*
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+  }
+  */
+  
+    /*
+    #myProgress {
+      width: 100%;
+      background-color: #ddd;
+  }
+  
+  #myBar {
+      width: 1%;
+      height: 30px;
+      background-color: #4CAF50;
+  }
+  */
+  
