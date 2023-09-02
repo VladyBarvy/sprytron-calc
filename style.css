@@ -4,54 +4,42 @@
   }
   
   
+
+
+
   
-  h1 {
-    font-size: 30px;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-    color: #3ebcf7;
-    text-transform: uppercase;
-    
-    text-shadow: 1px 1px 0px #957dad,
-  
-  
-                 1px 2px 0px #957dad,
-  
-                 1px 3px 0px #957dad,
-                 1px 4px 0px #957dad,
-                 1px 5px 0px #957dad,
-                 
-  
-                 1px 6px 0px #957dad;
-  
-  /*
-                 1px 10px 5px rgba(16, 16, 16, 0.5),
-                 1px 15px 10px rgba(16, 16, 16, 0.4),
-  
-                 
-                 1px 20px 30px rgba(16, 16, 16, 0.3),
-                 1px 25px 50px rgba(16, 16, 16, 0.2);
-                 */
-  }
-  
-  
-  
-  /*
-  .calculator__step-title {
-  
-    
-    border-radius: 10px;
-    box-shadow: 0 0 7px 3px #3ae0e6;
-    text-indent: 30px;
-    padding: 10px 20px 10px 20px;
-    margin: 20px auto;
-    width: 400px;
-    background: #ffffff;
+
+
+
+
+
+
+
+
+
+
+
+.header-h1 {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Century Gothic', sans-serif;
+  color: #3ba0ff;
+  text-transform: uppercase;
+
+}
+
+
+
+
+
+
+
+
+
+
+
   
   
-    
-  }
-  */
   
   
   
@@ -59,14 +47,14 @@
   
   .button {
       display: inline-block;
-      background: #46cbff;
+      background: #3ba0ff;
       color: #ffffff;
       padding: 10px;
       border: none;
       border-radius: 5px;
       text-decoration: none;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 16px;
+      font-family: 'Century Gothic', sans-serif;
+      font-size: 14px;
       line-height: 1;
       font-weight: 100;
       cursor: pointer;
@@ -128,20 +116,7 @@
      }
   
   
-  
-  /*
-     #input_voltage {
-      resize: none;
-      width: 100px;
-      height: 10px;
-   
-      
-      background: #f6f6f6;
-      border: 1px solid #cecece;
-      border-radius: 8px 0 0 0;
-      padding: 8px 0 8px 10px;
-     }
-  */
+
   
      .form_style {
       resize: none;
@@ -181,10 +156,10 @@
       white-space: nowrap;
       text-overflow: ellipsis;
   */
-  
+ 
   
       border-radius: 10px;
-      box-shadow: 0 0 7px 3px #3ae0e6;
+      box-shadow: 0 0 7px 3px #3ba0ff;
   
   
      /* text-indent: 30px;*/
@@ -197,12 +172,7 @@
       
     }
   
-  /*
-  #answers {
-    text-align: left;
-  }
-  */
-  
+
   
   
   
@@ -237,28 +207,3 @@
       /*color: red;*/
       text-align: right;
     }
-  
-  
-  
-  
-    /*Убирает стрелочки в формах ввода*/
-    /*
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-  }
-  */
-  
-    /*
-    #myProgress {
-      width: 100%;
-      background-color: #ddd;
-  }
-  
-  #myBar {
-      width: 1%;
-      height: 30px;
-      background-color: #4CAF50;
-  }
-  */
-  

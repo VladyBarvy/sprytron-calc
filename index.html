@@ -12,36 +12,38 @@
 <div class="parent">
       
     
-  <table  class ="table"  width="1000" height="300">  
+  <table border="1" class ="table"  width="1000" height="300">  
       
-    <h1 >РЕЗИСТИВНЫЙ ДЕЛИТЕЛЬ НАПРЯЖЕНИЯ</h1>
-      
+    <div class="header-h1">
+      <h1>РЕЗИСТИВНЫЙ ДЕЛИТЕЛЬ НАПРЯЖЕНИЯ</h1>
+    </div>
+
       <!--  border="1"  -->
       
     <tr>
   
 
   
-  
+  <!-- 
       <th>  
-        <img src="res.png" alt="Resistor Devider">
+        <img src="images\res_dev_1.png" alt="Resistor Devider">
       </th>
+-->
 
-
-      <th>  
+      <th align="center">  
           <form id="form">
 
-
+            <img src="images\res_dev_1.png" alt="Resistor Devider">
 
 
             <div class="forms_style_edition">
 
-              <div style="margin-bottom: 10px;">
+              <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
                 <label for="input_voltage_show"  >Входное напряжение Uвх</label>
               </div>
 
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="input_voltage" required>  <b>В</b>
+                <input class="form_style" id="input_voltage" required>  <b style="font-family: 'Century Gothic', sans-serif;">В</b>
               </div>
 
 
@@ -49,24 +51,24 @@
 
 
 
-              <div style="margin-bottom: 10px;">
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
                 <label for="resistance_1" id="resistance_1_lab">Сопротивление R1</label>
               </div>
 
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r1" required>  <b>Ом</b>
+                <input class="form_style" id="resistance_r1" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
 
 
 
 
-              <div style="margin-bottom: 10px;">
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
                 <label for="resistance_2"  id="resistance_2_lab">Сопротивление R2</label>
               </div>
 
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r2" required>  <b>Ом</b>
+                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
 
@@ -91,7 +93,7 @@
                 
             <div class="answers_style_edition" id="answers">
 
-              <div style="margin-bottom: 10px; margin-top: 10px;">
+              <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
                 <label for="output_voltage_show">Выходное напряжение Uвых</label> 
               </div>
                 <!-- 
@@ -113,7 +115,7 @@
 
 
 
-                <div style="margin-bottom: 10px; margin-top: 20px;">
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
                   <label for="output_current_show">Ток через делитель I</label> 
                 </div>
 
@@ -157,29 +159,7 @@
 
 </div>
 
-  <!--    
-<div class="calculator__step-title" >
-<div >Внесите свои данные:</div>
-<div class="data">
-    <div class="data__block">
-        <div class="data__block-item">
-            <label for="age">Ваш возраст</label>
-            <input id="age" type="number" name="age" min="1" max="120">
-        </div>
-        <div class="data__block-item">
-            <label for="growth">Ваш рост</label>
-            <input id="growth" type="number" name="growth" min="1" max="120">
-        </div>
-        <div class="data__block-item">
-            <label for="weight">Ваш вес</label>
-            <input id="weight" type="number" name="weight" min="1" max="120">
-        </div>
- 
-    </div>
-    <button type="submit" id="step-result" class="calculator-btn disabled" disabled>Рассчитать норму калорий</button>
-</div>
-</div>
--->
+
 
 
       <script src="src.js"></script>
