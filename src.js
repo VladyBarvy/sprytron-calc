@@ -56,7 +56,7 @@ const form = document.getElementById('form')
 form.addEventListener('submit', function(event) {
 event.preventDefault();
 
-form.reset();
+
 
 const result_1 = document.querySelector('#result');
 const result_2 = document.querySelector('#result_current');
