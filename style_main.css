@@ -1,0 +1,67 @@
+.header-h1 {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Century Gothic', sans-serif;
+    color: #3ba0ff;
+    text-transform: uppercase;
+}
+
+
+
+.table {
+
+
+    border-radius: 10px;
+    box-shadow: 0 0 7px 3px #3ba0ff;
+
+
+   
+    padding: 10px 20px 10px 20px;
+    margin: 20px auto;
+/*
+    width: 800px;
+    height: 800px;
+*/
+    background: #ffffff;
+    
+}
+
+
+
+.button {
+    width: 190px;
+    height: 90px;
+
+    display: inline-block;
+    background: #3ba0ff;
+    color: #ffffff;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 100;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+}
+
+
+
+.button:hover {
+    background-color: #212ee6; /* Цвет фона при наведении */
+}
+
+
+
+.table_cell {
+    width: 210px;
+    height:100px;
+}
+
+  
+
+
+

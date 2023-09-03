@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resistive Voltage Divider</title>
+</head>
+<body>
+    
+    <!-- -->
+<div class="parent">
+      
+    
+  <table  class ="table"  >  
+      
+    <div class="header-h1">
+      <h1>РЕЗИСТИВНЫЙ ДЕЛИТЕЛЬ НАПРЯЖЕНИЯ</h1>
+    </div>
+
+      <!--  border="1"  -->
+      
+    <tr>
+  
+
+  
+  <!-- 
+      <th>  
+        <img src="images\res_dev_1.png" alt="Resistor Devider">
+      </th>
+-->
+
+      <th align="center">  
+          <form id="form">
+
+            <img src="images\res_dev_1.png" alt="Resistor Devider">
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="input_voltage_show"  >Входное напряжение Uвх</label>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="input_voltage" required>  <b style="font-family: 'Century Gothic', sans-serif;">В</b>
+              </div>
+
+
+        
+
+
+
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_1" id="resistance_1_lab">Сопротивление R1</label>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r1" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+
+
+
+
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R2</label>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+          <div class="button-row" id="button_style">
+              <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+
+              <button class="button" type="reset" id="button_ochistit">Очистить</button>
+          </div>
+
+
+
+                
+            <div class="answers_style_edition" id="answers">
+
+              <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="output_voltage_show">Выходное напряжение Uвых</label> 
+              </div>
+                <!-- 
+                <b id="result">0</b>
+                -->
+
+                
+                  <input type="number" name="total" id="total" style="width: 150px; height: 20px;"/>
+                
+
+
+                
+                  <select name="select" style="max-width:70%;" id = "out_volt">
+                    <option атрибуты>мВ</option>
+                    <option атрибуты>В</option> 
+                    <option атрибуты>кВ</option> 
+                  </select>
+                
+
+
+
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_current_show">Ток через делитель I</label> 
+                </div>
+
+
+              <!-- 
+                <b id="result_current">0</b>
+              -->
+
+              <input type="number" name="total_cur" id="total_cur" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                
+
+                
+                  <select name="select" style="max-width:90%;" id = "out_cur">
+                    <option атрибуты>мкА</option> 
+                    <option атрибуты>мА</option> 
+                    <option атрибуты>А</option> 
+                  </select>
+                
+
+            </div>
+
+
+
+
+      
+
+          </form>
+      </th>
+
+    </tr>
+
+
+
+
+    
+
+
+  </table>
+
+
+
+</div>
+
+
+
+
+      <script src="src.js"></script>
+
+
+
+
+</body>
+</html>
