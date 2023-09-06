@@ -48,13 +48,15 @@ form.addEventListener("submit", function(event) {
 
 
 
-
+//const form_answers = document.getElementById('#answers')
 
 
 const form = document.getElementById('form')
 
 form.addEventListener('submit', function(event) {
 event.preventDefault();
+
+//form_answers.reset();
 
 
 
@@ -127,6 +129,8 @@ if (goop === "мкВ") {
 if (goop === "кВ") {
   resu_1 /= 1000;
 }
+
+
 
 
 document.getElementById('total').value = resu_1.toFixed(3);
