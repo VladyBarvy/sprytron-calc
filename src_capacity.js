@@ -1,54 +1,5 @@
-let global_input_voltage = 0;
-
 const app = () => {
 
-/*
-let cur_num = 0;
-let volt_num = 0;
-let res_num = 0;
-
-
-const form = document.getElementById('form');  //const form = document.forms[0];
-
-
-
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const result_1 = document.querySelector('#result');
-
-
-
-
-  const { name, description } = this.elements;
-
-  //const data_1 = new FormData(event.target);
-  volt_num = name.value;    //volt_num = parseInt(data_1.get('name'), 10);  //
-
-  //const data_2 = new FormData(event.target);
-  res_num = description.value;  //res_num = parseInt(data_2.get('description'), 10);  //
-
-  
-  
-  cur_num = volt_num / res_num;
-
-  result_1.textContent = cur_num;
-
-
-});
-*/
-
-
-
-
-
-
-
-
-
-
-
-//const form_answers = document.getElementById('#answers')
 
 
 const form = document.getElementById('form')
@@ -56,23 +7,29 @@ const form = document.getElementById('form')
 form.addEventListener('submit', function(event) {
 event.preventDefault();
 
-//form_answers.reset();
-
 
 
 const result_1 = document.querySelector('#result');
 const result_2 = document.querySelector('#result_current');
 
 const input_voltage_data = document.getElementById('input_voltage').value;
-const resistance_r1_data = document.getElementById('resistance_r1').value;
-const resistance_r2_data = document.getElementById('resistance_r2').value; 
+const capacity_r1_data = document.getElementById('capacity_r1').value;
+const capacity_r2_data = document.getElementById('capacity_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(capacity_r1_data, 10);
+let data_3 = parseFloat(capacity_r2_data, 10);
 
-let resu_1 = (data_1 * data_3) / (data_2 + data_3);
-let resu_2 = data_1 / (data_2 + data_3);
+data_2 = data_2 * 0.000001;
+data_3 = data_3 * 0.000001;
+
+let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
+
+
+let react_resist_data_2 = 1 / (314 * data_2);
+let react_resist_data_3 = 1 / (314 * data_3);
+
+let resu_2 = data_1 / (react_resist_data_2 + react_resist_data_3);    // ток через делитель
 
 
 
@@ -168,19 +125,28 @@ list_of_currents.addEventListener('change', function(e) {
 
 
 
-  const result_1 = document.querySelector('#result');
+const result_1 = document.querySelector('#result');
 const result_2 = document.querySelector('#result_current');
 
 const input_voltage_data = document.getElementById('input_voltage').value;
-const resistance_r1_data = document.getElementById('resistance_r1').value;
-const resistance_r2_data = document.getElementById('resistance_r2').value; 
+const capacity_r1_data = document.getElementById('capacity_r1').value;
+const capacity_r2_data = document.getElementById('capacity_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(capacity_r1_data, 10);
+let data_3 = parseFloat(capacity_r2_data, 10);
 
-let resu_1 = (data_1 * data_3) / (data_2 + data_3);
-let resu_2 = data_1 / (data_2 + data_3);
+data_2 = data_2 * 0.000001;
+data_3 = data_3 * 0.000001;
+
+let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
+
+
+let react_resist_data_2 = 1 / (314 * data_2);
+let react_resist_data_3 = 1 / (314 * data_3);
+
+let resu_2 = data_1 / (react_resist_data_2 + react_resist_data_3);    // ток через делитель
+
 
   
 
@@ -231,15 +197,24 @@ list_of_voltages.addEventListener('change', function(e) {
 const result_2 = document.querySelector('#result_current');
 
 const input_voltage_data = document.getElementById('input_voltage').value;
-const resistance_r1_data = document.getElementById('resistance_r1').value;
-const resistance_r2_data = document.getElementById('resistance_r2').value; 
+const capacity_r1_data = document.getElementById('capacity_r1').value;
+const capacity_r2_data = document.getElementById('capacity_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(capacity_r1_data, 10);
+let data_3 = parseFloat(capacity_r2_data, 10);
 
-let resu_1 = (data_1 * data_3) / (data_2 + data_3);
-let resu_2 = data_1 / (data_2 + data_3);
+data_2 = data_2 * 0.000001;
+data_3 = data_3 * 0.000001;
+
+let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
+
+
+let react_resist_data_2 = 1 / (314 * data_2);
+let react_resist_data_3 = 1 / (314 * data_3);
+
+let resu_2 = data_1 / (react_resist_data_2 + react_resist_data_3);    // ток через делитель
+
 
   
 
