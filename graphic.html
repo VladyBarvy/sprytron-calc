@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Graph</title>
+</head>
+<body>
+    
+    
+<!--
+    <label id="progress-label" for="progress"></label>
+    <progress id="progress" value="0" max="100"> </progress>
+
+     <input type="file" id="file-uploader">
+   -->
+    
+   
+    <input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
+    <div id="fileOutput"></div>
+
+
+
+
+
+    <div id="container"></div>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script>
+        /*
+    anychart.onDocumentLoad(function() {
+      // create chart and set data
+      // as Array of Objects
+      // the biggest point is marked with individually conigured marker
+      var chart = anychart.line([
+        {x: "Winter", value: 5},
+        {x: "Spring", value: 9},// {x: "Spring", value: 9, marker: {enabled: true, type: "star5", fill: "Gold"}},
+        {x: "Summer", value: 7},
+        {x: "Fall",   value: 1}
+      ]);
+      chart.title("График зависимости температуры от времени");
+      chart.container("container").draw();
+    });
+    */
+
+
+    function processFiles(files) {
+        var file = files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var output = document.getElementById("fileOutput");   
+            // output.textContent = e.target.result;
+            let poop = e.target.result;
+            let oppa = poop.split('@');
+            output.textContent = oppa[0];
+        };
+    
+        reader.readAsText(file);
+
+
+        const fileUploader = document.getElementById('fileInput');
+
+        fileUploader.addEventListener('change', (event) => {
+            const files = event.target.files;
+            console.log('files', files);
+        });
+
+        /*
+        const csvString = `
+        2009-02-06,6764\n 
+        2009-02-07,7056\n 
+        2009-02-08,7180\n 
+        `
+        */
+        let mas_op = [];
+
+        for (let i = 0; i < oppa.length - 1; i += 1) {
+            let q1 = oppa[i];
+            let q2 = q1.split('|');
+            let q3 = q2[0];
+            mas_op.push(q3);
+            let q4 = q2[2];
+            mas_op.push(q4);
+
+            output.textContent = mas_op;
+            
+            anychart.onDocumentLoad(() => {
+                const chart = anychart.line();
+                chart.line(mas_op);
+                chart.title("Profit growth");
+                chart.container("container");
+                chart.draw();
+            });
+        }
+        
+
+/*
+        anychart.onDocumentLoad(() => {
+            const chart = anychart.line();
+            chart.line(csvString);
+            chart.title("Profit growth");
+            chart.container("container");
+            chart.draw();
+        });
+*/
+    };
+
+
+
+
+
+
+
+
+/*
+    const reader = new FileReader();
+
+
+reader.addEventListener('progress', (event) => {
+  if (event.loaded && event.total) {
+    // Calculate the percentage completed
+    const percent = (event.loaded / event.total) * 100;
+    // Set the value to the progress component
+    progress.value = percent;
+  }
+});
+
+
+    const fileUploader = document.getElementById('fileInput');
+
+    fileUploader.addEventListener('change', (event) => {
+        const files = event.target.files;
+        console.log('files', files);
+    });
+
+        const csvString = `
+        2009-02-06,6764\n 
+        2009-02-07,7056\n 
+        2009-02-08,7180\n 
+        `
+
+
+
+anychart.onDocumentLoad(() => {
+  const chart = anychart.line();
+  chart.line(csvString);
+  chart.title("Profit growth");
+  chart.container("container");
+  chart.draw();
+});
+
+*/
+    </script>
+
+
+
+
+
+</body>
+</html>
