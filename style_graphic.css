@@ -1,0 +1,38 @@
+.parent {
+    text-align: center;
+    
+  }
+
+.header-h1 {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Century Gothic', sans-serif;
+    color: #3ba0ff;
+    text-transform: uppercase;
+}
+
+.table {
+
+
+    border-radius: 10px;
+    box-shadow: 0 0 7px 3px #3ba0ff;
+
+
+   
+    padding: 10px 20px 10px 20px;
+    margin: 20px auto;
+
+    width: 1300px;
+    height: 600px;
+
+    background: #ffffff;
+    
+}
+
+#container {
+    width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+
