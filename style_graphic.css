@@ -30,9 +30,103 @@
 }
 
 #container {
-    width: 1200px;
+    width: 900px;
     height: 500px;
     margin: 20px auto;
 }
+
+
+.interface_butt {
+
+
+    border-radius: 10px;
+    box-shadow: 0 0 7px 3px #3ba0ff;
+
+
+   
+    padding: 10px 20px 10px 20px;
+    margin: 20px auto;
+
+    width: 500px;
+    height: 100px;
+
+    background: #ffffff;
+    
+}
+
+.table_cell {
+    width: 300px;
+    height: 300px;
+}
+
+
+.table_cell_graph {
+    width: 900px;
+    height:100px;
+}
+
+
+
+.button {
+    width: 100px;
+    height: 50px;
+
+    display: inline-block;
+    background: #3ba0ff;
+    color: #ffffff;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 100;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+
+.button:hover {
+    background-color: #212ee6; /* Цвет фона при наведении */
+}
+
+
+
+.quer {
+    text-align: left;
+
+
+}
+
+
+
+
+ul.ordering {    list-style:none;   min-width:250px; }
+ul.ordering li
+{ 
+    text-align: left;
+    display: block; 
+    clear: left; 
+    vertical-align: middle;  
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 14px;
+    line-height: 20px; 
+   padding-left: 5px; 
+}
+ul.ordering li span{  width: 50px; height: 50px; background: black;  display:inline-block; margin-right:6px }
+ul.ordering li:nth-child(2) span{ background:red !important;  }
+ul.ordering li:nth-child(3) span{ background:orange !important;  }
+ul.ordering li:nth-child(4) span{ background:blue !important;  }
+ul.ordering li:nth-child(5) span{ background:cyan !important;  }
+ul.ordering li:nth-child(6) span{ background:pink !important;  }
+
 
 

@@ -1,4 +1,7 @@
 
+
+let moomba = [];
+
 function processFiles(files) {
     var file = files[0];
     var reader = new FileReader();
@@ -27,6 +30,8 @@ function processFiles(files) {
         let pom2 = [];
         let quick = [];
 
+        moomba = quick;
+
         for(let i = 0; i < pom.length; i += 1) {
             let q2 = pom[i][1];
             let q3 = pom[i][3];
@@ -34,7 +39,7 @@ function processFiles(files) {
             let pom2 = []; 
             pom2.push(q2, q3);
 
-            quick.push(pom2);   
+            moomba.push(pom2);   
         }
 
 
@@ -42,7 +47,7 @@ function processFiles(files) {
 
 
 
-        var dataSet = anychart.data.set(quick);
+        var dataSet = anychart.data.set(moomba);
 
 
         var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
@@ -72,6 +77,9 @@ function processFiles(files) {
         chart.xAxis().title("Время");
         chart.yAxis().title("Температура");
 
+      //  chart.yScale().ticks().interval(10);
+      //  chart.xScale().ticks().interval(5);
+
         //chart.title("Временной график температуры");
         chart.container("container");
         chart.draw();
@@ -88,8 +96,106 @@ function processFiles(files) {
 };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let int_y_temp = 0;
+
+// обработка нажатия кнопки "Масштаб по температуре УВЕЛИЧИТЬ"
+function func_y_interval_plus(){
+       
+    int_y_temp += 1;
+    
+
+   
+
+chart.yScale().ticks().interval(int_y_temp);
+
+
+
+
+
+
+/*
+    var dataSet = anychart.data.set(moomba);
+
+
+    var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
+
+
+
+    const fileUploader = document.getElementById('fileInput');
+
+    fileUploader.addEventListener('change', (event) => {
+        const files = event.target.files;
+        console.log('files', files);
+    });
+
+    
+
+
+    const chart = anychart.line();
+    chart.line(firstSeriesData);
+    chart.yScale(anychart.scales.linear());
+
+    chart.yAxis().staggerMode(true);
+
+    chart.yAxis().staggerMaxLines(20);
+
+    
+
+    chart.xAxis().title("Время");
+    chart.yAxis().title("Температура");
+
+    int_y_temp += 1;
+    chart.yScale().ticks().interval(int_y_temp);
+
+
+    //chart.title("Временной график температуры");
+    chart.container("container");
+    chart.draw();
+
+    chart.xScroller(true);
+    chart.yScroller(true);
+*/
+
+
+    
+    
+    
+
+};
+
+
+
+
+
+
+
+
 const app = () => {
    processFiles(files);
+
+
+    func_y_interval_plus();
+
+
+
+
+
+
 };
 
 app();

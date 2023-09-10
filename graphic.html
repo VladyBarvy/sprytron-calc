@@ -18,6 +18,8 @@
     <label id="progress-label" for="progress"></label>
     <progress id="progress" value="0" max="100"> </progress>
      <input type="file" id="file-uploader">
+
+     border="1"
    -->
     
    
@@ -28,28 +30,151 @@
     <input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
     <div id="fileOutput"></div>
    
-        <table  class ="table"  >  
-     
+        <table  class ="table">  
+           
 
             <tr>
-                <td style="width: 35%">
+                <td class="table_cell">
+  
+                    <div>
+                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Реальное время</button>
+
+                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Тестовое время</button>
+                    </div>
+                        
+
+                    <div>
+                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Диаграмма режимов</button>
+
+                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Параметры испытаний</button>
+                    </div>
+
+                    <div>
+                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Сохранить график</button>
+
+      
+                    </div>
+
+                </td>
+
+
+
+                <td  rowspan="2" class="table_cell_graph" >
+                    
+                    <div id="container"></div>
+       
+                </td>
+
+
+            </tr>
+
+<!--
+-->
+            <tr>
+                <td class="quer">
+                   
+                    
+                    <ul class="ordering">
+                        <li><span></span>0: ОЖИДАНИЕ СЕТИ ПИТАНИЯ</li>
+                        <li><span></span>1: НАГРЕВ</li>
+                        <li><span></span>2: ПОДДЕРЖАНИЕ НАГРЕВА</li>
+                        <li><span></span>3: ПРОДУВКА</li>
+                        <li><span></span>4: ПОДДЕРЖАНИЕ ПРОДУВКИ</li>
+                        <li><span></span>5: ИСПЫТАНИЕ НА НАГРЕВ</li>
+                    </ul>
+                    
+                      
+                        
+                      
+                      
+                
+                </td>
+
+
+
+
+            </tr>
+
+
+
+
+<!--
+            <tr >
+                
+                <td class="table_cell">
+                    sdfs
+                </td>
+
+                <td class ="table"  class="table_cell">
                     <div id="container"></div>
                 </td>
+
+
+                
             </tr>
 
 
             <tr>
+                <td class="table_cell">
+                    sdfs
+                </td>
+
 
             </tr>
  
-            
+         -->
 
         </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+        <table class="interface_butt" id="logic">
+
+            <tr>
+                <th>
+                    <button class="button" type="reset" id="y_interval_plus" onclick="func_y_interval_plus();">Мастаб по температуре УВЕЛИЧИТЬ</button>
+                    
+                        
+                    
+                </th>
+
+                <th>
+                    <button class="button" type="submit" id="x_interval_plus" >Мастаб по времени УВЕЛИЧИТЬ</button>
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <button class="button" type="submit" id="y_interval_minus" onclick="func_y_interval_minus();">Мастаб по температуре УМЕНЬШИТЬ</button>
+                </th>
+
+                <th>
+                    <button class="button" type="submit" id="x_interval_minus" >Мастаб по времени УМЕНЬШИТЬ</button>
+                </th>
+            </tr>
+
+        </table>
+-->
 
         <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
         <script src="src_graphic.js"></script>
 
-
+   
    </div>
 
 </body>
