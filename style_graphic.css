@@ -19,24 +19,33 @@
 
 
    
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 10px 10px;
     margin: 20px auto;
 
-    width: 1300px;
-    height: 600px;
+    width: 1100px;
+    height: 400px;
 
     background: #ffffff;
     
 }
 
+
+/* график реального времени*/
 #container {
     width: 900px;
-    height: 500px;
+    height: 400px;
     margin: 20px auto;
 }
 
 
-.interface_butt {
+
+
+
+
+
+
+/* таблица с вкладками*/
+.interface_tabs {
 
 
     border-radius: 10px;
@@ -44,11 +53,11 @@
 
 
    
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 10px 10px;
     margin: 20px auto;
 
-    width: 500px;
-    height: 100px;
+    width: 1100px;
+    height: 500px;
 
     background: #ffffff;
     
@@ -62,7 +71,7 @@
 
 .table_cell_graph {
     width: 900px;
-    height:100px;
+    height: 100px;
 }
 
 
@@ -100,6 +109,47 @@
 
 
 
+
+
+
+.button_save {
+    width: 180px;
+    height: 30px;
+
+    display: inline-block;
+    background: #3ba0ff;
+    color: #ffffff;
+    /*padding: 5px;*/
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 100;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+/*
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    */
+}
+
+
+
+.button_save:hover {
+    background-color: #212ee6; /* Цвет фона при наведении */
+}
+
+
+
+
+
+
+
 .quer {
     text-align: left;
 
@@ -130,3 +180,102 @@ ul.ordering li:nth-child(6) span{ background:pink !important;  }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tabs {
+   /* font-size: 0;
+    margin: 20px auto;*/
+    /*width: 900px;*/
+    /*height: 100px;*/
+
+
+  }
+
+  .tabs>input[type="radio"] {
+    display: none;
+  }
+
+  .tabs>div {
+    /* скрыть контент по умолчанию */
+    display: none;
+
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    font-size: 16px;
+
+
+
+
+  }
+
+  /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3 {
+    display: block;
+  }
+
+  .tabs>label {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    padding: 2px 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+  }
+
+  .tabs>label:not(:first-of-type) {
+    border-left: none;
+  }
+
+  .tabs>input[type="radio"]:checked+label {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+
+#container_2 {
+    width: 900px;
+    height: 400px;
+    margin: 10px auto;
+}
+
+#container_3 {
+    width: 900px;
+    height: 400px;
+    margin: 10px auto;
+}
+
+#container_4 {
+    width: 900px;
+    height: 400px;
+    margin: 10px auto;
+}
+
+
+.graph_width {
+    width: 900px;
+    height: 400px;
+}
