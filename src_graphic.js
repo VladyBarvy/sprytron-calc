@@ -3,6 +3,8 @@
 let moomba = [];
 var chart;
 
+
+// график "Реальное время"
 function processFiles(files) {
     var file = files[0];
     var reader = new FileReader();
@@ -77,6 +79,7 @@ function processFiles(files) {
         */
  
         chart = anychart.line();
+        chart.xGrid(true).yGrid(true);
         chart.line(firstSeriesData);
         chart.yScale(anychart.scales.linear());
         chart.yAxis().staggerMode(true);
@@ -113,8 +116,14 @@ function processFiles(files) {
 
 
 
-let toomba = [];
 
+
+
+var toomba = [];
+
+
+
+// график "Тестовое время"
 function processFiles_2(files) {
     var file = files[0];
     var reader = new FileReader();
@@ -140,14 +149,16 @@ function processFiles_2(files) {
 
         let q2 = 0;
         let q3 = 0;
+        let q4 = 0;
         let pom2 = [];
-        let quick = [];
+        var quick = [];
 
         toomba = quick;
 
         for(let i = 0; i < pom.length; i += 1) {
-            let q2 = pom[i][1];
+            let q2 = pom[i][4];
             let q3 = pom[i][3];
+          //  let q4 = pom[i][6];
 
             let pom2 = []; 
             pom2.push(q2, q3);
@@ -178,21 +189,24 @@ function processFiles_2(files) {
 
 
 
-
-
-
-
-
         const chart_2 = anychart.column();
+        chart_2.xGrid(true).yGrid(true);
+
        
-        chart_2.column(firstSeriesData).stroke("15 red");
+        series = chart_2.column(firstSeriesData);
+
+        // set custom coloring functions
+       // series.fill(coloringFunction_2);
 
         //chart_2.column(firstSeriesData).stroke("5 red");
 
+        chart_2.yScale().minimum(0).maximum(100);
+        chart_2.yScale().ticks().interval(5);
+
         chart_2.yScale(anychart.scales.linear());
         
-        chart_2.yAxis().staggerMode(true);
-        chart_2.yAxis().staggerMaxLines(20);
+        //chart_2.yAxis().staggerMode(true);
+        //chart_2.yAxis().staggerMaxLines(20);
         chart_2.xAxis().title("Время");
         chart_2.yAxis().title("Температура");
         chart_2.container("container_3");
@@ -226,8 +240,10 @@ function processFiles_2(files) {
 
 
 
-let qoomba = [];
+var qoomba = [];
 
+
+// график "Диаграмма режимов"
 function processFiles_3(files) {
     var file = files[0];
     var reader = new FileReader();
@@ -254,7 +270,7 @@ function processFiles_3(files) {
         let q2 = 0;
         let q3 = 0;
         let pom2 = [];
-        let quick = [];
+        var quick = [];
 
         qoomba = quick;
 
@@ -292,14 +308,18 @@ function processFiles_3(files) {
 
 
 
-
-
-
-
+//////////////////////////////////
+/*
         const chart_3 = anychart.line();
-       
-        chart_3.line(firstSeriesData).stroke("green");
+        chart_3.xGrid(true).yGrid(true);
 
+        
+           // chart_3.line(firstSeriesData).stroke("green");
+        
+
+           
+        series = chart_3.line(firstSeriesData);
+        series.fill(coloringFunction);
         
 
         chart_3.yScale(anychart.scales.linear());
@@ -311,14 +331,41 @@ function processFiles_3(files) {
         chart_3.container("container_4");
 
         
-    
-        
         chart_3.draw();
         chart_3.xScroller(true);
         chart_3.yScroller(true);
+        */
+        //////////////////////////////
         
+
+        // set the chart type
+    var chart_3 = anychart.column();
+    chart_3.xGrid(true).yGrid(true);
+
+    // set the series type and data
+    series = chart_3.column(qoomba);
+
+    // set custom coloring functions
+    series.fill(coloringFunction);
+    //series.stroke('1 Black');
+
+    chart_3.yScale(anychart.scales.linear());
         
-        
+    chart_3.yScale().minimum(0).maximum(5);
+    chart_3.yScale().ticks().interval(1);
+
+    //chart_3.yAxis().staggerMode(true);
+    //chart_3.yAxis().staggerMaxLines(10);
+    chart_3.xAxis().title("Время");
+    chart_3.yAxis().title("Режим работы");
+    chart_3.container("container_4");
+
+    // initiate drawing the chart
+    chart_3.draw();
+    chart_3.xScroller(true);
+    //chart_3.yScroller(true);
+
+
 
     };
 
@@ -335,6 +382,128 @@ function processFiles_3(files) {
 
 
 
+
+
+
+
+
+
+
+
+
+// custom color function
+function coloringFunction() {
+
+    // color the maximal value
+   // if (this.value == this.series.getStat('seriesMax')) return '#94353C';
+  
+    // color elements depending on the argument
+    var x = this.value;
+
+    if (x == '0') {
+        return '#000000';
+    }
+
+    if (x == '1') {
+        return '#FF0000';
+    } 
+    
+    if (x == '2') {
+        return '#FF4500';
+    }
+    
+    if (x == '3') {
+        return '#0000FF';
+    }
+
+    if (x == '4') {
+        return '#00FFFF';
+    }
+
+    if (x == '5') {
+        return '#FFC0CB';
+    }
+  
+    // get the default otherwise
+    return this.sourceColor;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // custom color function
+function coloringFunction_2() {
+
+    // color the maximal value
+   // if (this.value == this.series.getStat('seriesMax')) return '#94353C';
+  
+    // color elements depending on the argument
+    var x = this.toomba[2];
+    if (x == '0') {
+        return '#000000';
+    }
+
+    if (x == '1') {
+        return '#FF0000';
+    } 
+    
+    if (x == '2') {
+        return '#FF4500';
+    }
+    
+    if (x == '3') {
+        return '#0000FF';
+    }
+
+    if (x == '4') {
+        return '#00FFFF';
+    }
+
+    if (x == '5') {
+        return '#FFC0CB';
+    }
+  
+    // get the default otherwise
+    return this.sourceColor;
+  }
+
+
+
+
+
+
+
+/*
+// custom color function
+function coloringFunction() {
+
+    // color elements depending on the argument
+    var x = this.x;
+    //if  ((x == 'Jan') || (x == 'Feb') || (x == 'Dec')) return '#B2E3E8';
+    //if  ((x == 'Jul') || (x == 'Jun') || (x == 'Aug')) return '#D94330';
+    if (x == 'Nov') {
+        return '#FF0000';
+    } else if (x == 'Oct') {
+        return '#FF4500';
+    } else if (x == 'Jan') {
+        return '#0000FF';
+    }
+  
+    // get the default otherwise
+    return this.sourceColor;
+  }
+
+*/
 
 
 
