@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_RVD.css">
     <title>Resistive Voltage Divider</title>
 </head>
 <body>
@@ -96,22 +96,20 @@
               <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
                 <label for="output_voltage_show">Выходное напряжение Uвых</label> 
               </div>
-                <!-- 
-                <b id="result">0</b>
-                -->
+       
+              <input type="number" name="total" id="total" step="0.000001" style="width: 150px; height: 20px;"/>
+    
+              <select name="select" style="max-width:70%;" id = "out_volt">
+                <option атрибуты>мВ</option>
+                <option атрибуты>В</option> 
+                <option атрибуты>кВ</option> 
+              </select>
+                
 
-                
-                  <input type="number" name="total" id="total" step="0.000001" style="width: 150px; height: 20px;"/>
-                
 
 
-                
-                  <select name="select" style="max-width:70%;" id = "out_volt">
-                    <option атрибуты>мВ</option>
-                    <option атрибуты>В</option> 
-                    <option атрибуты>кВ</option> 
-                  </select>
-                
+
+
 
 
 
@@ -119,21 +117,80 @@
                   <label for="output_current_show">Ток через делитель I</label> 
                 </div>
 
+                <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; "/>
+                
+                <select name="select" style="max-width:90%;" id = "out_cur">
+                  <option атрибуты>мкА</option> 
+                  <option атрибуты>мА</option> 
+                  <option атрибуты>А</option> 
+                </select>
 
-              <!-- 
-                <b id="result_current">0</b>
-              -->
 
-              <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+
+
+
+
+
+
+
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_koef_divide_show">Коэффициент деления</label> 
+                </div>
+
+                <input type="number" name="total_koef_divide" id="total_koef_divide" step="0.000001" style="width: 150px; height: 20px; "/>
+                
+       
+
+
+
+
+
+
+
+
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_power_1_show">Мощность рассеивания R1</label> 
+                </div>
+
+                <input type="number" name="total_power_1" id="total_power_1" step="0.000001" style="width: 150px; height: 20px; "/>
+                
+                <select name="select" style="max-width:90%;" id = "out_power_1">
+                  <option атрибуты>мкВт</option> 
+                  <option атрибуты>мВт</option> 
+                  <option атрибуты>Вт</option> 
+                </select>
+
+
+
+
+
+
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_power_2_show">Мощность рассеивания R2</label> 
+                </div>
+
+                <input type="number" name="total_power_2" id="total_power_2" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                
+                <select name="select" style="max-width:90%;" id = "out_power_2">
+                  <option атрибуты>мкВт</option> 
+                  <option атрибуты>мВт</option> 
+                  <option атрибуты>Вт</option> 
+                </select>
                 
 
-                
-                  <select name="select" style="max-width:90%;" id = "out_cur">
-                    <option атрибуты>мкА</option> 
-                    <option атрибуты>мА</option> 
-                    <option атрибуты>А</option> 
-                  </select>
-                
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
 
@@ -162,7 +219,7 @@
 
 
 
-      <script src="src.js"></script>
+      <script src="resistive_voltage_divider.js"></script>
 
 
 

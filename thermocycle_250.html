@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_graphic.css">
-    <title>Temperature Graph</title>
+    <link rel="stylesheet" href="style_thermocycle_250.css">
+    <title>Thermocycle-250</title>
 </head>
 <body>
     
     <div class="header-h1"  style="text-align: center;">
         <h1>ПРОГРАММА ОБРАБОТКИ ДАННЫХ</h1>
         <h1>THERMOCYCLE - 250</h1>
-      </div>
+    </div>
 
 
 
@@ -22,7 +22,8 @@
 
      border="1"
    -->
-    
+
+
    
 
    <div class="parent" >
@@ -30,110 +31,7 @@
 
     <input class="butt_load" id="fileInput" type="file" size="50" onchange="processFiles(this.files), processFiles_2(this.files), processFiles_3(this.files)">
     <div id="fileOutput"></div>
-   <!--
-        <table border="1" class ="table">  
-           
-
-            <tr>
-                <td class="table_cell">
-  
-                    <div>
-                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Реальное время</button>
-
-                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Тестовое время</button>
-                    </div>
-                        
-
-                    <div>
-                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Диаграмма режимов</button>
-
-                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Параметры испытаний</button>
-                    </div>
-
-                    <div>
-                        <button class="button" type="submit" id="real_time" onclick="func_graph_real_time();">Сохранить график</button>
-
-      
-                    </div>
-
-                </td>
-
-
-
-                <td  rowspan="2" class="table_cell_graph" >
-                    
-                    <div id="container"></div>                                                       
-                    
-                </td>
-
-
-            </tr>
-
-
-
-            <tr>
-                <td class="quer"> 
-                    <ul class="ordering">
-                        <li><span></span>0: ОЖИДАНИЕ СЕТИ ПИТАНИЯ</li>
-                        <li><span></span>1: НАГРЕВ</li>
-                        <li><span></span>2: ПОДДЕРЖАНИЕ НАГРЕВА</li>
-                        <li><span></span>3: ПРОДУВКА</li>
-                        <li><span></span>4: ПОДДЕРЖАНИЕ ПРОДУВКИ</li>
-                        <li><span></span>5: ИСПЫТАНИЕ НА НАГРЕВ</li>
-                    </ul>
-                </td>
-
-
-
-
-            </tr>
-
-
-
-
-
-            <tr >
-                
-                <td class="table_cell">
-                    sdfs
-                </td>
-
-                <td class ="table"  class="table_cell">
-                    <div id="container"></div>
-                </td>
-
-
-                
-            </tr>
-
-
-            <tr>
-                <td class="table_cell">
-                    sdfs
-                </td>
-
-
-            </tr>
- 
-         
-
-        </table>
-    -->
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
 <!--
 
@@ -141,10 +39,7 @@
 -->
 
 
-
-
-
-
+            
 
             <table class="interface_tabs" >
 
@@ -421,7 +316,7 @@
         <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
         <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
   
-        <script src="src_graphic.js"></script>
+        <script src="thermocycle_250.js"></script>
 
    
    </div>
