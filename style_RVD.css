@@ -8,7 +8,11 @@
 
 
   
-
+  a
+  {
+  font-family: 'Century Gothic', sans-serif;
+  color: #3ba0ff;
+  }
 
 
 
@@ -32,6 +36,27 @@
 
 
 
+
+h1.change-text{
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          transition: 1s; 
+          text-align: center;  
+}
+h1.change-text:hover{
+  color: #f652e8; /* Меняем цвет текста */
+  transform: scale(1.05); 
+}
+
+
+
+
+
+
+
+
+
+   
 
 
 
