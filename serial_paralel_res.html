@@ -46,37 +46,98 @@
                 <label for="input_voltage_show"  >Соединение резисторов</label>
               </div>
 
-<!-- 
-              <form class="form">
-                <div class="radio-container">
-                    <div class="form-item radio-btn nth-2">
-                    <input type="radio" name="option1" id="radio1" checked>
-                    <label for="radio1">Последовательное</label>
-                  </div>
-                    <div class="form-item radio-btn nth-2">
-                    <input type="radio" name="option1" id="radio2">
-                    <label for="radio2">Параллельное</label>
-                  </div>
-                </div>
-              </form>
-            -->
 
 
-              <div class="wrapper">
-                <input type="radio" name="select" id="option-1" checked>
-                <input type="radio" name="select" id="option-2">
-                  <label for="option-1" class="option option-1">
-                    <div class="dot"></div>
-                     <span style="font-family: 'Century Gothic', sans-serif; font-size: 15px; font-weight: 100;">Последовательное</span>
-                     </label>
-                  <label for="option-2" class="option option-2">
-                    <div class="dot"></div>
-                     <span style="font-family: 'Century Gothic', sans-serif; font-size: 15px; font-weight: 100;">Параллельное</span>
-                  </label>
-               </div>
+
+
+              <div class="container">
+                <label for="radio-one" class="form-radio-hidden">
+                  <input type="radio" name="demo" value="one" id="radio-one" checked>
+                  <span class="radio"></span>
+                  <span class="text" >Последовательное</span>
+                </label>
+                <label for="radio-two" class="form-radio-hidden">
+                  <input type="radio" name="demo" value="one" id="radio-two">
+                  <span class="radio"></span>
+                  <span class="text" >Параллельное</span>
+                </label>
+              </div>
+
+
 
 
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_1" id="resistance_1_lab">Сопротивление R1</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r1" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R2</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R3</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R4</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R5</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -97,46 +158,23 @@
             <div class="answers_style_edition" id="answers">
 
               <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
-                <label for="output_voltage_show">Выходное напряжение Uвых</label> 
+                <label for="output_voltage_show">Общее сопротивление</label> 
               </div>
-                <!-- 
-                <b id="result">0</b>
-                -->
 
                 
-                  <input type="number" name="total" id="total" step="0.000001" style="width: 150px; height: 20px;"/>
+                  <input type="number" name="total" id="total" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
                 
 
 
                 
                   <select name="select" style="max-width:70%;" id = "out_volt">
-                    <option атрибуты>мВ</option>
-                    <option атрибуты>В</option> 
-                    <option атрибуты>кВ</option> 
+                    <option атрибуты>Ом</option>
+                    <option атрибуты>кОм</option> 
+                    <option атрибуты>МОм</option>
+                    <option атрибуты>ГОм</option> 
                   </select>
                 
 
-
-
-                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
-                  <label for="output_current_show">Ток через делитель I</label> 
-                </div>
-
-
-              <!-- 
-                <b id="result_current">0</b>
-              -->
-
-              <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
-                
-
-                
-                  <select name="select" style="max-width:90%;" id = "out_cur">
-                    <option атрибуты>мкА</option> 
-                    <option атрибуты>мА</option> 
-                    <option атрибуты>А</option> 
-                  </select>
-                
 
             </div>
 
