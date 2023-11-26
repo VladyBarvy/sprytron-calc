@@ -49,26 +49,91 @@
 
 
 
-
-              <div class="container">
-                <label for="radio-one" class="form-radio-hidden">
-                  <input type="radio" name="demo" value="one" id="radio-one" checked>
-                  <span class="radio"></span>
-                  <span class="text" >Последовательное</span>
-                </label>
-                <label for="radio-two" class="form-radio-hidden">
-                  <input type="radio" name="demo" value="one" id="radio-two">
-                  <span class="radio"></span>
-                  <span class="text" >Параллельное</span>
-                </label>
-              </div>
-
-
+             
+                <div class="container" id="radiobutt_serial_parallel">
+                  <label for="radio-one" class="form-radio-hidden">
+                    <input type="radio" name="demo" value="1" id="radio-one" checked>
+                    <span class="radio"></span>
+                    <span class="text" >Последовательное</span>
+                  </label>
+                  <label for="radio-two" class="form-radio-hidden">
+                    <input type="radio" name="demo" value="2" id="radio-two">
+                    <span class="radio"></span>
+                    <span class="text" >Параллельное</span>
+                  </label>
+                </div>
+            
+           
 
 
             </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="input_number_resistors"  >Количество резисторов</label>
+              </div>
+
+              <div class="container">
+                <div style="margin-bottom: 20px;">
+                  <input class="form_style" id="numb_resist" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" min="2" max="5" step="1" value="2" required>  <b style="font-family: 'Century Gothic', sans-serif;">шт</b>
+                </div>
+              </div>
+
+              <div class="add_item" style="margin-bottom: 10px;" id="button_style">
+                <button class="button"  id="button_add" type="button" onclick="enableField()">Выбрать</button>
+              </div>
+
+              <script>
+                
+                function enableField(){
+                  let get_number_of_resist = document.getElementById("numb_resist").value;
+                  const data_1 = parseFloat(get_number_of_resist, 10);
+                  let q3 = document.getElementById("resistance_r3");
+                  let q4 = document.getElementById("resistance_r4");
+                  let q5 = document.getElementById("resistance_r5");
+                  if (data_1 === 2) {
+                    q3.disabled = true;
+                    q4.disabled = true;
+                    q5.disabled = true;
+                  }
+                  
+                  if (data_1 === 3) {
+                    q3.disabled = false;
+                    q4.disabled = true;
+                    q5.disabled = true;
+                  }
+
+                  if (data_1 === 4) {
+                    q3.disabled = false;
+                    q4.disabled = false;
+                    q5.disabled = true;
+                  }
+
+                  if (data_1 === 5) {
+                    q3.disabled = false;
+                    q4.disabled = false;
+                    q5.disabled = false;
+                  }
+                }
+              </script>
+
+            </div>
+
+
+        
 
 
 
@@ -87,7 +152,7 @@
                 <label for="resistance_1" id="resistance_1_lab">Сопротивление R1</label>
               </div>
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r1" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+                <input class="form_style" id="resistance_r1" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
 
@@ -96,32 +161,32 @@
                 <label for="resistance_2"  id="resistance_2_lab">Сопротивление R2</label>
               </div>
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+                <input class="form_style" id="resistance_r2" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
 
   
               <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
-                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R3</label>
+                <label for="resistance_3"  id="resistance_3_lab">Сопротивление R3</label>
               </div>
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+                <input class="form_style" id="resistance_r3" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  disabled>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
   
               <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
-                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R4</label>
+                <label for="resistance_4"  id="resistance_4_lab">Сопротивление R4</label>
               </div>
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+                <input class="form_style" id="resistance_r4" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  disabled>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
   
               <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
-                <label for="resistance_2"  id="resistance_2_lab">Сопротивление R5</label>
+                <label for="resistance_5"  id="resistance_5_lab">Сопротивление R5</label>
               </div>
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="resistance_r2" required>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
+                <input class="form_style" id="resistance_r5" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  disabled>  <b style="font-family: 'Century Gothic', sans-serif;">Ом</b>
               </div>
 
 
@@ -138,18 +203,28 @@
 
 
 
+           
 
+<!--  <div class="button-addy" id="button_style" >  -->
 
-
-
-
+ 
 
 
 
             <div class="button-row" id="button_style">
               <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+              <button class="button" type="reset" id="button_ochistit" onclick="disableAll()">Очистить</button>
 
-              <button class="button" type="reset" id="button_ochistit">Очистить</button>
+              <script>
+                  function disableAll(){
+                    let get3= document.getElementById("resistance_r3")
+                    let get4= document.getElementById("resistance_r4")
+                    let get5= document.getElementById("resistance_r5")
+                    get3.disabled = true;
+                    get4.disabled = true;
+                    get5.disabled = true;
+                  }
+              </script>
             </div>
 
 
@@ -167,7 +242,7 @@
 
 
                 
-                  <select name="select" style="max-width:70%;" id = "out_volt">
+                  <select name="select" style="max-width:70%;" id = "out_resistance">
                     <option атрибуты>Ом</option>
                     <option атрибуты>кОм</option> 
                     <option атрибуты>МОм</option>

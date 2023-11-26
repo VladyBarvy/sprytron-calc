@@ -1,4 +1,8 @@
+let connection_diagram = 0;
+let option_value = 1;
 const app = () => {
+
+
 
 
 
@@ -7,94 +11,153 @@ const app = () => {
     form.addEventListener('submit', function(event) {
     event.preventDefault();
     
-    
+ 
     
     const result_1 = document.querySelector('#result');
-    const result_2 = document.querySelector('#result_current');
-    
-    const input_voltage_data = document.getElementById('input_voltage').value;
-    const capacity_r1_data = document.getElementById('capacity_r1').value;
-    const capacity_r2_data = document.getElementById('capacity_r2').value; 
-    
-    let data_1 = parseFloat(input_voltage_data, 10);
-    let data_2 = parseFloat(capacity_r1_data, 10);
-    let data_3 = parseFloat(capacity_r2_data, 10);
-    
-    data_2 = data_2 * 0.000001;
-    data_3 = data_3 * 0.000001;
-    
-    let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
+   
     
     
-    let react_resist_data_2 = 1 / (314 * data_2);
-    let react_resist_data_3 = 1 / (314 * data_3);
+    const resistance_r1_data = document.getElementById('resistance_r1').value;
+    const resistance_r2_data = document.getElementById('resistance_r2').value;
+    const resistance_r3_data = document.getElementById('resistance_r3').value;
+    const resistance_r4_data = document.getElementById('resistance_r4').value;
+    const resistance_r5_data = document.getElementById('resistance_r5').value;
     
-    let resu_2 = data_1 / (react_resist_data_2 + react_resist_data_3);    // ток через делитель
+    let data_1 = parseFloat(resistance_r1_data, 10);
+    let data_2 = parseFloat(resistance_r2_data, 10);
+    let data_3 = parseFloat(resistance_r3_data, 10);
+    let data_4 = parseFloat(resistance_r4_data, 10);
+    let data_5 = parseFloat(resistance_r5_data, 10);
     
+
+
+
+
+
+
+    let options = document.getElementsByName('demo');
+ 
+    for(let i = 0; i < options.length; i +=1 ) {
+        if(options[i].checked){
+            option_value = options[i].value;
+            connection_diagram = Number(option_value);
+            break;
+        }
+    }
+     
     
+  
+
+
+
+
+
+
+
+    let resu_1 = 0;
+    if (connection_diagram === 1) {
+      let q3 = document.getElementById("resistance_r3");
+      let q4 = document.getElementById("resistance_r4");
+      let q5 = document.getElementById("resistance_r5");
+  
+      if (q3.disabled === true) {
+        data_3 = 0;
+        resu_1 = data_1 + data_2 + data_3 + data_4 + data_5; // общее сопротивление при ПОСЛЕДОВАТЕЛЬНОМ соединении
+      }
+      if (q4.disabled === true) {
+        data_4 = 0;
+        resu_1 = data_1 + data_2 + data_3 + data_4 + data_5; // общее сопротивление при ПОСЛЕДОВАТЕЛЬНОМ соединении
+      }
+      if (q5.disabled === true) {
+        data_5 = 0;
+        resu_1 = data_1 + data_2 + data_3 + data_4 + data_5; // общее сопротивление при ПОСЛЕДОВАТЕЛЬНОМ соединении
+      }
+    }
+
+
+
     
-    
-    /*
-    let e = document.getElementById("out_cur");
-    let value_cur_show_me = e.value;
-    let text_me = e.options[e.selectedIndex].text;
-    */
-    
-    let select_current = document.getElementById('out_cur');
-    let select_value_current = select_current.options[select_current.selectedIndex].value;
-    
-    const poop = select_value_current.toString();
-    
-    
-    
-    
-    let select_voltage = document.getElementById('out_volt');
-    let select_value_voltage = select_voltage.options[select_voltage.selectedIndex].value;
-    
-    const goop = select_value_voltage.toString();
-    
-    
-    
-    
-    if (poop === "мА") {
-      resu_2 *= 1000;
+
+
+
+
+
+
+    let resu_2 = 0;
+    if (connection_diagram === 2) {
+      let q3 = document.getElementById("resistance_r3");
+      let q4 = document.getElementById("resistance_r4");
+      let q5 = document.getElementById("resistance_r5");
+  
+      if ((q3.disabled === true) && (q4.disabled === true) && (q5.disabled === true)) {
+        resu_2 = 1 / ((1/data_1) + (1/data_2)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+      }
+      if ((q3.disabled === false) && (q4.disabled === true) && (q5.disabled === true)) {
+        resu_2 = 1 / ((1/data_1) + (1/data_2) + (1/data_3)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+      }
+      if ((q3.disabled === false) && (q4.disabled === false) && (q5.disabled === true)) {
+        resu_2 = 1 / ((1/data_1) + (1/data_2) + (1/data_3) + (1/data_4)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+      }
+      if ((q3.disabled === false) && (q4.disabled === false) && (q5.disabled === false)) {
+        resu_2 = 1 / ((1/data_1) + (1/data_2) + (1/data_3) + (1/data_4) + (1/data_5)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+      }
     }
     
-    if (poop === "А") {
-      resu_2 *= 1;
+    
+    
+
+    
+    
+
+    
+    let select_resistance = document.getElementById('out_resistance');
+    let select_value_resistance = select_resistance.options[select_resistance.selectedIndex].value;
+    
+    const poop = select_value_resistance.toString();
+    
+    
+    
+    
+    if (poop === "Ом") {
+      resu_1 /= 1;
+      resu_2 /= 1;
     }
     
-    if (poop === "мкА") {
-      resu_2 *= 1000000;
-    }
-    
-    
-    
-    
-    if (goop === "мВ") {
-      resu_1 *= 1000;
-    }
-    
-    if (goop === "В") {
-      resu_1 *= 1;
-    }
-    
-    if (goop === "мкВ") {
-      resu_1 *= 1000000;
-    }
-    
-    if (goop === "кВ") {
+    if (poop === "кОм") {
       resu_1 /= 1000;
+      resu_2 /= 1000;
+    }
+       
+    if (poop === "МОм") {
+      resu_1 /= 1000000;
+      resu_2 /= 1000000;
+    }
+
+    if (poop === "ГОм") {
+      resu_1 /= 1000000;
+      resu_2 /= 1000000;
     }
     
     
+
     
     
+    
+    if (connection_diagram === 1) {
     document.getElementById('total').value = resu_1.toFixed(3);
-    document.getElementById('total_cur').value = resu_2.toFixed(3);
-    
     result_1.textContent = resu_1.toFixed(3);
-    result_2.textContent = resu_2.toFixed(3);
+    } 
+
+    if (connection_diagram === 2) {
+      document.getElementById('total').value = resu_2.toFixed(3);
+      result_1.textContent = resu_2.toFixed(3);
+    } 
+
+
+
+
+
+
     
     });
     
@@ -110,67 +173,8 @@ const app = () => {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    const list_of_currents = document.querySelector('#out_cur');
-    
-    list_of_currents.addEventListener('change', function(e) {  
-      let selectedValue = e.target.value;
-    
-    
-    
-    const result_1 = document.querySelector('#result');
-    const result_2 = document.querySelector('#result_current');
-    
-    const input_voltage_data = document.getElementById('input_voltage').value;
-    const capacity_r1_data = document.getElementById('capacity_r1').value;
-    const capacity_r2_data = document.getElementById('capacity_r2').value; 
-    
-    let data_1 = parseFloat(input_voltage_data, 10);
-    let data_2 = parseFloat(capacity_r1_data, 10);
-    let data_3 = parseFloat(capacity_r2_data, 10);
-    
-    data_2 = data_2 * 0.000001;
-    data_3 = data_3 * 0.000001;
-    
-    let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
-    
-    
-    let react_resist_data_2 = 1 / (314 * data_2);
-    let react_resist_data_3 = 1 / (314 * data_3);
-    
-    let resu_2 = data_1 / (react_resist_data_2 + react_resist_data_3);    // ток через делитель
-    
-    
-      
-    
-      
-      if (selectedValue === "мА") {
-        resu_2 *= 1000;
-      }
-      
-      if (selectedValue === "А") {
-        resu_2 *= 1;
-      }
-      
-      if (selectedValue === "мкА") {
-        resu_2 *= 1000000;
-      }
-    
-    
-      //document.getElementById('total').value = resu_1.toFixed(3);
-    document.getElementById('total_cur').value = resu_2.toFixed(3);
-    
-      //result_1.textContent = resu_1.toFixed(3);
-    result_2.textContent = resu_2.toFixed(3);
-    
-    });
+
+
     
     
     
@@ -180,66 +184,137 @@ const app = () => {
     
     
     
+    const list_of_resistance = document.querySelector('#out_resistance');
     
-    
-    
-    
-    
-    
-    const list_of_voltages = document.querySelector('#out_volt');
-    
-    list_of_voltages.addEventListener('change', function(e) {  
+    list_of_resistance.addEventListener('change', function(e) {  
       let selectedValue = e.target.value;
     
     
     
       const result_1 = document.querySelector('#result');
-    const result_2 = document.querySelector('#result_current');
+
     
-    const input_voltage_data = document.getElementById('input_voltage').value;
-    const capacity_r1_data = document.getElementById('capacity_r1').value;
-    const capacity_r2_data = document.getElementById('capacity_r2').value; 
+      const resistance_r1_data = document.getElementById('resistance_r1').value;
+      const resistance_r2_data = document.getElementById('resistance_r2').value;
+      const resistance_r3_data = document.getElementById('resistance_r3').value;
+      const resistance_r4_data = document.getElementById('resistance_r4').value;
+      const resistance_r5_data = document.getElementById('resistance_r5').value;
     
-    let data_1 = parseFloat(input_voltage_data, 10);
-    let data_2 = parseFloat(capacity_r1_data, 10);
-    let data_3 = parseFloat(capacity_r2_data, 10);
-    
-    data_2 = data_2 * 0.000001;
-    data_3 = data_3 * 0.000001;
-    
-    let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
-    
-    
-    let react_resist_data_2 = 1 / (314 * data_2);
-    let react_resist_data_3 = 1 / (314 * data_3);
-    
-    let resu_2 = data_1 / (react_resist_data_2 + react_resist_data_3);    // ток через делитель
-    
-    
+      let data_1 = parseFloat(resistance_r1_data, 10);
+      let data_2 = parseFloat(resistance_r2_data, 10);
+      let data_3 = parseFloat(resistance_r3_data, 10);
+      let data_4 = parseFloat(resistance_r4_data, 10);
+      let data_5 = parseFloat(resistance_r5_data, 10);
       
+  
+
+
+
+      let options = document.getElementsByName('demo');
+ 
+      for(let i = 0; i < options.length; i +=1 ) {
+          if(options[i].checked){
+              option_value = options[i].value;
+              connection_diagram = Number(option_value);
+              break;
+          }
+      }
+       
+
+  
+  
+  
+  
+  
+  
+  
+      let resu_1 = 0;
+      if (connection_diagram === 1) {
+        let q3 = document.getElementById("resistance_r3");
+        let q4 = document.getElementById("resistance_r4");
+        let q5 = document.getElementById("resistance_r5");
     
-      if (selectedValue === "мкВ") {
-        resu_1 *= 1000000;
+        if (q3.disabled === true) {
+          data_3 = 0;
+          resu_1 = data_1 + data_2 + data_3 + data_4 + data_5; // общее сопротивление при ПОСЛЕДОВАТЕЛЬНОМ соединении
+        }
+        if (q4.disabled === true) {
+          data_4 = 0;
+          resu_1 = data_1 + data_2 + data_3 + data_4 + data_5; // общее сопротивление при ПОСЛЕДОВАТЕЛЬНОМ соединении
+        }
+        if (q5.disabled === true) {
+          data_5 = 0;
+          resu_1 = data_1 + data_2 + data_3 + data_4 + data_5; // общее сопротивление при ПОСЛЕДОВАТЕЛЬНОМ соединении
+        }
+      }
+  
+  
+  
+      
+  
+  
+  
+  
+  
+  
+      let resu_2 = 0;
+      if (connection_diagram === 2) {
+        let q3 = document.getElementById("resistance_r3");
+        let q4 = document.getElementById("resistance_r4");
+        let q5 = document.getElementById("resistance_r5");
+    
+        if ((q3.disabled === true) && (q4.disabled === true) && (q5.disabled === true)) {
+          resu_2 = 1 / ((1/data_1) + (1/data_2)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+        }
+        if ((q3.disabled === false) && (q4.disabled === true) && (q5.disabled === true)) {
+          resu_2 = 1 / ((1/data_1) + (1/data_2) + (1/data_3)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+        }
+        if ((q3.disabled === false) && (q4.disabled === false) && (q5.disabled === true)) {
+          resu_2 = 1 / ((1/data_1) + (1/data_2) + (1/data_3) + (1/data_4)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+        }
+        if ((q3.disabled === false) && (q4.disabled === false) && (q5.disabled === false)) {
+          resu_2 = 1 / ((1/data_1) + (1/data_2) + (1/data_3) + (1/data_4) + (1/data_5)); // общее сопротивление при ПАРАЛЛЕЛЬНОМ соединении
+        }
       }
       
-      if (selectedValue === "мВ") {
-        resu_1 *= 1000;
+      
+      
+    
+
+    
+      
+
+      if (selectedValue === "ГОм") {
+        resu_1 /= 1000000000;
+        resu_2 /= 1000000000;
+      }
+        
+      if (selectedValue === "МОм") {
+        resu_1 /= 1000000;
+        resu_2 /= 1000000;
       }
       
-      if (selectedValue === "В") {
-        resu_1 *= 1;
-      }
-      
-      if (selectedValue === "кВ") {
+      if (selectedValue === "кОм") {
         resu_1 /= 1000;
+        resu_2 /= 1000;
       }
+      
+      if (selectedValue === "Ом") {
+        resu_1 /= 1;
+        resu_2 /= 1;
+      }
+
+
+
+    
+
     
     
       document.getElementById('total').value = resu_1.toFixed(3);
-    //document.getElementById('total_cur').value = resu_2.toFixed(3);
+ 
     
       result_1.textContent = resu_1.toFixed(3);
-    //result_2.textContent = resu_2.toFixed(3);
+    
     
     });
     
@@ -262,11 +337,8 @@ const app = () => {
     
       const volt_out_show = document.querySelector('#result');
       const volt_out_sample = 0;
-      volt_out_show.textContent = volt_out_sample.toFixed(0);
-    
-      const cur_out_show = document.querySelector('#result_current');
-      const cur_out_sample = 0;
-      cur_out_show.textContent = cur_out_sample.toFixed(0);
+      volt_out_show.textContent = volt_out_sample.toFixed(0);    
+      connection_diagram = 1;
     });
     
     

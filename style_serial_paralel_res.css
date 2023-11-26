@@ -321,6 +321,23 @@ input[type="radio"]{
       height: 35px;
      /* margin: 10px;*/
      }
+
+
+     #button_add {
+      /* margin-left:100px;*/
+       width: 100px;
+       height: 35px;
+      /* margin: 10px;*/
+      }
+
+
+
+      .button_addy {
+        text-align: center;
+        padding: 10px 20px 10px 20px;
+    
+       }
+    
   
   
 
@@ -381,8 +398,17 @@ input[type="radio"]{
   
 
   
-  
-  
+    #resistance_r3:disabled {
+      opacity: .2;
+    }
+
+    #resistance_r4:disabled {
+      opacity: .2;
+    }
+
+    #resistance_r5:disabled {
+      opacity: .2;
+    }
   
   
   
