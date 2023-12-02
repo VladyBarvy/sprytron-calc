@@ -366,13 +366,13 @@ let resu_5 = ((data_1 / (data_2 + data_3)) * data_3) * (data_1 / (data_2 + data_
   }
 
 
-  document.getElementById('total').value = resu_1.toFixed(3);
-//document.getElementById('total_cur').value = resu_2.toFixed(3);
-document.getElementById('total_power_1').value = resu_4.toFixed(3);
+  //document.getElementById('total').value = resu_1.toFixed(3);
+  //document.getElementById('total_cur').value = resu_2.toFixed(3);
+  document.getElementById('total_power_1').value = resu_4.toFixed(3);
 
-  result_1.textContent = resu_1.toFixed(3);
-//result_2.textContent = resu_2.toFixed(3);
-result_4.textContent = resu_4.toFixed(3);
+  //result_1.textContent = resu_1.toFixed(3);
+  //result_2.textContent = resu_2.toFixed(3);
+  result_4.textContent = resu_4.toFixed(3);
 
 });
 
@@ -434,13 +434,12 @@ let resu_5 = ((data_1 / (data_2 + data_3)) * data_3) * (data_1 / (data_2 + data_
     resu_5 /= 1000;
   }
 
+  //document.getElementById('total').value = resu_1.toFixed(3);
+  //document.getElementById('total_cur').value = resu_2.toFixed(3);
+  document.getElementById('total_power_2').value = resu_5.toFixed(3);
 
-  document.getElementById('total').value = resu_1.toFixed(3);
-//document.getElementById('total_cur').value = resu_2.toFixed(3);
- document.getElementById('total_power_2').value = resu_5.toFixed(3);
-
-  result_1.textContent = resu_1.toFixed(3);
-//result_2.textContent = resu_2.toFixed(3);
+  //result_1.textContent = resu_1.toFixed(3);
+  //result_2.textContent = resu_2.toFixed(3);
   result_5.textContent = resu_5.toFixed(3);
 
 });

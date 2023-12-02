@@ -101,6 +101,12 @@
                 function enableField(){
                   let get_number_of_resist = document.getElementById("numb_resist").value;
                   const data_1 = parseFloat(get_number_of_resist, 10);
+                  if (data_1 > 5) {
+                    data_1 = 5;
+                    const num_res_out_show = document.querySelector('numb_resist');
+                    num_res_out_show.textContent = data_1.toFixed(0);  
+                  }
+
                   let q3 = document.getElementById("resistance_r3");
                   let q4 = document.getElementById("resistance_r4");
                   let q5 = document.getElementById("resistance_r5");
