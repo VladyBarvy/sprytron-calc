@@ -29,7 +29,7 @@
    <div class="parent" >
    
 
-    <input class="butt_load" id="fileInput" type="file" size="50" onchange="processFiles(this.files), processFiles_2(this.files), processFiles_3(this.files)">
+    <input class="butt_load" id="fileInput" type="file" size="50" onchange="processFiles(this.files), processFiles_2(this.files), processFiles_3(this.files), processFiles_4(this.files)">
     <div id="fileOutput"></div>
    
 
@@ -172,48 +172,52 @@
                             <div id="container_5">
 
 
-                            <form style="text-align: center;">
+                            <form style="text-align: left; margin-left: 15px;">
                                 <fieldset class="test_param">
-                                    <legend style="font-family: 'Century Gothic', sans-serif;">Заданные параметры испытания</legend>
+                                    <legend style="font-family: 'Century Gothic', sans-serif; text-align: center;">Заданные параметры испытания</legend>
                                         <!--
                                         <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
                                             <label for="output_current_show">Тип испытания</label> 
                                             <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
                                         </div>
                                         -->
-                                        <div style="margin-bottom: 5px; margin-top: 15px;">
+                                        <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                             <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                                 <label for="output_current_show"><b>Тип испытания</b></label> 
                                             </div>
-                                            <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                            <input type="text" name="total_name_test" id="name_of_test" style="width: 150px; height: 20px; margin-bottom: 8px;"/>
                                         </div>
 
-                                        <div style="margin-bottom: 5px; margin-top: 5px;">
+                                        <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                             <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                                 <label for="output_current_show"><b>Длительность испытания</b></label> 
                                             </div> 
-                                            <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                            <input type="text" name="total_cur" id="test_time" style="width: 150px; height: 20px; margin-bottom: 8px;"/>
+                                            <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">минуты</label>
                                         </div>
 
-                                        <div style="margin-bottom: 5px; margin-top: 5px;">
+                                        <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                             <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                                 <label for="output_current_show"><b>Максимальная температура</b></label> 
                                             </div>
-                                            <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                            <input type="text" name="total_cur" id="test_max_temp"  style="width: 150px; height: 20px; margin-bottom: 8px;"/>
+                                            <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">град. Цельсия</label>
                                         </div>
 
-                                        <div style="margin-bottom: 5px; margin-top: 5px;">
+                                        <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                             <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                                 <label for="output_current_show"><b>Время поддержания нагрева</b></label> 
                                             </div>
-                                            <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                            <input type=text" name="total_cur" id="test_time_warm"  style="width: 150px; height: 20px; margin-bottom: 8px;"/>
+                                            <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">минуты</label>
                                         </div>
 
-                                        <div style="margin-bottom: 5px; margin-top: 5px;">
+                                        <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                             <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                                 <label for="output_current_show"><b>Время поддержания продувки</b></label>
                                             </div>
-                                            <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                            <input type="text" name="total_cur" id="test_time_cold" style="width: 150px; height: 20px; margin-bottom: 8px;"/>
+                                            <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">минуты</label>
                                         </div>
 
 
@@ -231,61 +235,82 @@
 
 
                                 <fieldset class="test_param">
-                                    <legend style="font-family: 'Century Gothic', sans-serif;">Результаты испытания</legend>
+                                    <legend style="font-family: 'Century Gothic', sans-serif; text-align: center;">Результаты испытания</legend>
 
-                                    <div style="margin-bottom: 5px; margin-top: 15px;">
+                                    <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                         <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                             <label for="output_current_show"><b>Количество выполненных циклов</b></label> 
                                         </div>
-                                        <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                        <input type="text" name="total_cur" id="complete_cycles"  style="width: 150px; height: 20px; margin-bottom: 8px;"/>
                                         <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">раз</label>
                                     </div>
 
-                                    <div style="margin-bottom: 5px; margin-top: 5px;">
+                                    <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                         <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                             <label for="output_current_show"><b>Фактическое время испытания</b></label> 
                                         </div> 
-                                        <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                        <input type="text" name="total_cur" id="fact_test_time"  style="width: 150px; height: 20px; margin-bottom: 8px;"/>
                                         <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">ЧЧЧ:ММ:СС</label>
                                     </div>
 
-                                    <div style="margin-bottom: 5px; margin-top: 5px;">
+                                    <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                         <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                             <label for="output_current_show"><b>Длительность отключения сети</b></label> 
                                         </div>
-                                        <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                        <input type="text" name="total_cur" id="time_of_no_line" style="width: 150px; height: 20px; margin-bottom: 8px;"/>
                                         <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">ЧЧЧ:ММ</label>
                                     </div>
 
-                                    <div style="margin-bottom: 5px; margin-top: 5px;">
+                                    <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                         <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                             <label for="output_current_show"><b>Средняя скорость нагрева</b></label> 
                                         </div>
-                                        <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                        <input type="number" name="total_cur" id="middle_speed_of_warm" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 8px;"/>
                                         <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">град/мин</label>
                                     </div>
 
-                                    <div style="margin-bottom: 5px; margin-top: 5px;">
+                                    <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 60px;">
                                         <div style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;">
                                             <label for="output_current_show"><b>Средняя скорость охлаждения</b></label>
                                         </div>
-                                        <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 20px;"/>
+                                        <input type="number" name="total_cur" id="middle_speed_of_cold" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 8px;"/>
                                         <label style="font-size: 14px; font-family: 'Century Gothic', sans-serif;">град/мин</label>
                                     </div>
 
                                 </fieldset>
+
+
+
+
+
+                                <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 32px; text-align: left;">
+                                    <label for="output_current_show" style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;"><b>Дата и время начала испытания: </b></label>
+                                    <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 10px;"/>
+                                    <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 10px;"/>
+                                </div>
+
+
+                                <div style="margin-bottom: 5px; margin-top: 5px; margin-left: 5px; text-align: left;">
+                                    <label for="output_current_show" style="margin-bottom: 1px; margin-top: 1px; font-family: 'Century Gothic', sans-serif;"><b>Дата и время окончания испытания: </b></label>
+                                    <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 10px;"/>
+                                    <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 150px; height: 20px; margin-bottom: 10px;"/>
+                                </div>
+
+
+
+
                             </form>
 
                             </div>
 
-<!--
+                        <!--                    
                             <form style="text-align: center;">
                                 <fieldset class="test_param">
                                     <legend>Результаты испытания</legend>
 
                                 </fieldset>
                             </form>
-                            -->
+                        -->
                         </div>
 
                         

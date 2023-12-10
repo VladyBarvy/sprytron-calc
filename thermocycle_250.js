@@ -1,5 +1,5 @@
 
-
+let report_data= [];
 let moomba = [];
 var chart;
 
@@ -538,58 +538,133 @@ function func_y_interval_plus(){
 
 chart.yScale().ticks().interval(int_y_temp);
 
+};
 
 
 
 
 
-/*
-    var dataSet = anychart.data.set(moomba);
-
-
-    var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
 
 
 
-    const fileUploader = document.getElementById('fileInput');
-
-    fileUploader.addEventListener('change', (event) => {
-        const files = event.target.files;
-        console.log('files', files);
-    });
-
-    
 
 
-    const chart = anychart.line();
-    chart.line(firstSeriesData);
-    chart.yScale(anychart.scales.linear());
-
-    chart.yAxis().staggerMode(true);
-
-    chart.yAxis().staggerMaxLines(20);
-
-    
-
-    chart.xAxis().title("Время");
-    chart.yAxis().title("Температура");
-
-    int_y_temp += 1;
-    chart.yScale().ticks().interval(int_y_temp);
 
 
-    //chart.title("Временной график температуры");
-    chart.container("container");
-    chart.draw();
 
-    chart.xScroller(true);
-    chart.yScroller(true);
-*/
 
+
+
+
+
+
+
+
+
+
+
+
+let info_aqua = [];
+let name_of_test_code = [];  // тип испытания (код)
+let name_of_test = "";  // тип испытания (расшифровка)
+let test_time_code = "";  // длительность испытания
+let test_max_temp = ""; // заданная максимальная температура нагрева 
+let max_time_warm = ""; // заданное максимальная время нагрева
+let max_time_cold = ""; // заданное максимальная время продувки
+let complete_cycles = ""; // выполненное количество циклов
+let fact_test_time = ""; // фактическое время испытания
+let time_of_no_line = ""; // длительность отключения сети
+let middle_speed_of_warm = ""; // средняя скорость нагрева
+let middle_speed_of_cold = ""; // средняя скорость охлаждения
+
+
+// вычисление данных при загрузке файла для формирования отчёта в разделе "Параметры испытания"
+function processFiles_4(files) {
+    var file = files[0];
+    var reader = new FileReader();
 
     
-    
-    
+
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput");   
+        // output.textContent = e.target.result;
+        let poop = e.target.result;
+        let oppa = poop.split('@');
+        //output.textContent = oppa[0];
+
+
+        let q1 = [];
+        let pom = [];
+
+        for(let i = 0; i < oppa.length; i += 1) {
+            q1 = oppa[i].split('|');
+            pom.push(q1);
+        }
+
+
+        let q2 = 0;
+        let q3 = 0;
+        let pom2 = [];
+        let quick = [];
+
+
+        //report_data = quick;
+
+        for(let i = 0; i < pom.length; i += 1) {
+            let q2 = pom[i][1];
+            let q3 = pom[i][3];
+
+            let pom2 = []; 
+            pom2.push(q2, q3);
+
+            report_data.push(pom2);   
+        }
+
+
+
+        let mikki = Number(pom.length - 2);
+        
+
+
+        // Наименование типа испытания
+        name_of_test_code = pom[1][10];
+        if (name_of_test_code === 0) {
+            name_of_test = "термоциклирование";
+        } else {
+            name_of_test = "испытание на нагрев";
+        }
+
+
+        // Заданная длительность испытания
+        test_time_code = pom[1][11];
+
+        // Заданная максимальная температура
+        test_max_temp = pom[1][12];
+
+        // Заданное время поддержания нагрева
+        max_time_warm = pom[1][13];
+
+        // Заданное время поддержания продувки
+        max_time_cold = pom[1][14];
+
+        // Выполненное количество циклов (в режиме ТЕРМОЦИКЛИРОВАНИЕ)
+        complete_cycles = Number(pom[mikki][8]);
+        complete_cycles += 1;
+
+        // Фактическое время испытания
+        fact_test_time = pom[mikki][4];
+
+        // Длительность отключения сети
+        time_of_no_line = pom[mikki][7];
+
+        // Средняя скорость нагрева
+
+
+        // Средняя скорость охлаждения
+
+    };
+
+    reader.readAsText(file);  
 
 };
 
@@ -600,9 +675,34 @@ chart.yScale().ticks().interval(int_y_temp);
 
 
 
+
+
+
+
+
+// сформировать отчёт в разделе "Параметры испытания"
+function func_make_report() {
+
+
+document.getElementById('name_of_test').value = name_of_test;
+document.getElementById('test_time').value = test_time_code;
+document.getElementById('test_max_temp').value =  test_max_temp;
+document.getElementById('test_time_warm').value = max_time_warm;
+document.getElementById('test_time_cold').value = max_time_cold;
+document.getElementById('complete_cycles').value = complete_cycles;
+document.getElementById('fact_test_time').value = fact_test_time;
+document.getElementById('time_of_no_line').value = time_of_no_line;
+
+};
+
+
+
+
+
+
 const app = () => {
    processFiles(files);
-
+   //func_make_report();
 
     func_y_interval_plus();
 

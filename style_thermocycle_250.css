@@ -353,7 +353,7 @@ ul.ordering li:nth-child(6) span{ background:pink !important;  }
 .test_param {
     display:inline-block;
     width: 400px;
-    height: 390px;
+    height: 320px; /* 390*/
 }
 /*
     width: 868px;
