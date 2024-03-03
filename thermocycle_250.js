@@ -1,8 +1,15 @@
 
-let report_data= [];
+let report_data = [];
 let moomba = [];
 var chart;
-
+let speed_warm_test_1;
+let tempo11;
+let tempo21;
+let power1 = [];
+let power2 = [];
+let mikki;
+let warm_temp_1 = [];
+let warm_temp_2 = [];
 
 // график "Реальное время"
 function processFiles(files) {
@@ -577,6 +584,11 @@ let time_of_no_line = ""; // длительность отключения се�
 let middle_speed_of_warm = ""; // средняя скорость нагрева
 let middle_speed_of_cold = ""; // средняя скорость охлаждения
 
+let date_start_test = "";  // дата начала испытания
+let time_start_test = "";  // время начала испытания
+let date_end_test = "";  // дата окончания испытания
+let time_end_test = "";  // время окончания испытания
+
 
 // вычисление данных при загрузке файла для формирования отчёта в разделе "Параметры испытания"
 function processFiles_4(files) {
@@ -622,13 +634,13 @@ function processFiles_4(files) {
 
 
 
-        let mikki = Number(pom.length - 2);
+        mikki = Number(pom.length - 2);
         
 
 
         // Наименование типа испытания
         name_of_test_code = pom[1][10];
-        if (name_of_test_code === 0) {
+        if (name_of_test_code === "1") {
             name_of_test = "термоциклирование";
         } else {
             name_of_test = "испытание на нагрев";
@@ -637,6 +649,8 @@ function processFiles_4(files) {
 
         // Заданная длительность испытания
         test_time_code = pom[1][11];
+        let poaq = Number(test_time_code) * 60;
+        test_time_code = String(poaq);
 
         // Заданная максимальная температура
         test_max_temp = pom[1][12];
@@ -657,10 +671,117 @@ function processFiles_4(files) {
         // Длительность отключения сети
         time_of_no_line = pom[mikki][7];
 
+        // Дата и время начала испытаний
+        date_start_test = pom[1][0];
+        time_start_test = pom[1][1];
+
+        // Дата и время окончания испытания
+        date_end_test = pom[pom.length - 2][0];
+        time_end_test = pom[pom.length - 2][1];
+
+
+
+
+
+
+
+
+
+
+               /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                // рассчитываем среднее время НАГРЕВА в режиме "ТЕРМОЦИКЛИРОВАНИЕ"
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+                for (let i = 0; i < pom.length; i += 1)
+                {
+                    if ((pom[i][10] === 1) && (pom[i][6] === 0))
+                    {
+                       
+                        power1.push(pom[i][1]);
+                        warm_temp_1.push(pom[i][3]);
+                    }
+/*
+                    if ((y7[i] == 5) && (y6[i] == 0))
+                    {
+                        power1.Add(x7[i]);
+                        warm_temp_1.Add(y8[i]);
+                    }
+*/
+          
+                }
+
+
+
+
+                let length_power1 = power1.length;
+            //    length_power2 = power2.Count;
+
+                let length_warm_temp_1 = warm_temp_1.length;
+            //    length_warm_temp_2 = warm_temp_2.Count;
+
+
+                let amma11 = power1[0];
+                let amma12 = 0;
+
+                let cool_mount = [];
+                
+                let info_max_temp_warming = pom[1][12];  // заданная максимальная температура нагрева
+                for (let i = 0; i < power1.length; i += 1)
+                {
+                    if (pom[i][12] === info_max_temp_warming) 
+                    {
+                        cool_mount = power1[i];
+                        break;
+                    }
+                }
+
+               // keep_going:
+
+                if (y7[0] == 5)
+                {
+                    amma12 = cool_mount;
+                }
+                else
+                {
+                    amma12 = power1[length_power1 - 2];
+                }
+                    
+
+                tempo11 = warm_temp_1[0];
+                tempo21 = warm_temp_1[length_warm_temp_1 - 1];
+
+                let dateTime_min1 = new Date(amma11);
+                let dateTime_max1 = new Date(amma12);
+                let diff_time_power1 = dateTime_max1 - dateTime_min1;
+
+
+                let diff_amma1 = String(dateTime_max1 - dateTime_min1);
+                let diff_tempo1 = tempo21 - tempo11;
+
+
+                let seco_power1 = Number(diff_time_power1.TotalMinutes);
+                let double_seco_power1 = Number(diff_tempo1 / seco_power1);
+                speed_warm_test_1 = Number(double_seco_power1);
+                
+
+
+
         // Средняя скорость нагрева
 
 
         // Средняя скорость охлаждения
+
+
+
+
+
+
+
+
 
     };
 
@@ -692,6 +813,16 @@ document.getElementById('test_time_cold').value = max_time_cold;
 document.getElementById('complete_cycles').value = complete_cycles;
 document.getElementById('fact_test_time').value = fact_test_time;
 document.getElementById('time_of_no_line').value = time_of_no_line;
+
+document.getElementById('data_start_testing').value = date_start_test;
+document.getElementById('time_start_testing').value = time_start_test;
+document.getElementById('data_stop_testing').value = date_end_test;
+document.getElementById('time_stop_testing').value = time_end_test;
+
+document.getElementById('middle_speed_of_warm').value =  speed_warm_test_1;
+console.log(power1);
+console.log(warm_temp_1);
+
 
 };
 
