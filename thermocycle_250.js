@@ -10,6 +10,30 @@ let power2 = [];
 let mikki;
 let warm_temp_1 = [];
 let warm_temp_2 = [];
+let pom = [];
+
+let dateTime_min1;
+let dateTime_max1;
+let diff_time_power1;
+
+let diff_amma1;
+let diff_tempo1;
+
+let seco_power1;
+let double_seco_power1;
+let length_power1 = power1.length;
+let length_warm_temp_1 = warm_temp_1.length;
+let amma01;
+let amma11;
+let amma12;
+let cool_mount;
+let info_max_temp_warming ;  
+
+let data_power_1;
+
+
+
+
 
 // график "Реальное время"
 function processFiles(files) {
@@ -606,7 +630,7 @@ function processFiles_4(files) {
 
 
         let q1 = [];
-        let pom = [];
+        pom = [];
 
         for(let i = 0; i < oppa.length; i += 1) {
             q1 = oppa[i].split('|');
@@ -673,7 +697,7 @@ function processFiles_4(files) {
 
         // Дата и время начала испытаний
         date_start_test = pom[1][0];
-        time_start_test = pom[1][1];
+        time_start_test = pom[0][1];
 
         // Дата и время окончания испытания
         date_end_test = pom[pom.length - 2][0];
@@ -692,15 +716,22 @@ function processFiles_4(files) {
                 // рассчитываем среднее время НАГРЕВА в режиме "ТЕРМОЦИКЛИРОВАНИЕ"
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+                data_power_1 = [];  // массив даты
+                power1 = [];        // массив времени
+                warm_temp_1 = [];   // массив температуры
 
 
-
-
-                for (let i = 0; i < pom.length; i += 1)
+                for (let i = 0; i < pom.length - 1; i += 1)
                 {
-                    if ((pom[i][10] === 1) && (pom[i][6] === 0))
+
+                    //console.log('birs'); console.log(pom[i][10]);
+                    //console.log('kiks'); console.log(pom[i][6]);
+                   
+
+                  
+                    if ((pom[i][10] === "1") && (pom[i][6] === "1"))
                     {
-                       
+                        data_power_1.push(pom[i][0]);
                         power1.push(pom[i][1]);
                         warm_temp_1.push(pom[i][3]);
                     }
@@ -715,21 +746,33 @@ function processFiles_4(files) {
                 }
 
 
+               // console.log(power1);
 
 
-                let length_power1 = power1.length;
+
+
+
+
+
+                length_power1 = power1.length;
             //    length_power2 = power2.Count;
 
-                let length_warm_temp_1 = warm_temp_1.length;
+                length_warm_temp_1 = warm_temp_1.length;
             //    length_warm_temp_2 = warm_temp_2.Count;
 
 
-                let amma11 = power1[0];
-                let amma12 = 0;
+                amma01 = data_power_1[0];
+                amma11 = power1[0];
+                amma12 = 0;
 
-                let cool_mount = [];
+                cool_mount = [];
                 
-                let info_max_temp_warming = pom[1][12];  // заданная максимальная температура нагрева
+                info_max_temp_warming = pom[1][12];  // заданная максимальная температура нагрева
+
+
+
+
+
                 for (let i = 0; i < power1.length; i += 1)
                 {
                     if (pom[i][12] === info_max_temp_warming) 
@@ -741,7 +784,7 @@ function processFiles_4(files) {
 
                // keep_going:
 
-                if (y7[0] == 5)
+                if (pom[1][6] == 5)
                 {
                     amma12 = cool_mount;
                 }
@@ -754,20 +797,104 @@ function processFiles_4(files) {
                 tempo11 = warm_temp_1[0];
                 tempo21 = warm_temp_1[length_warm_temp_1 - 1];
 
-                let dateTime_min1 = new Date(amma11);
-                let dateTime_max1 = new Date(amma12);
-                let diff_time_power1 = dateTime_max1 - dateTime_min1;
 
 
-                let diff_amma1 = String(dateTime_max1 - dateTime_min1);
-                let diff_tempo1 = tempo21 - tempo11;
 
 
-                let seco_power1 = Number(diff_time_power1.TotalMinutes);
-                let double_seco_power1 = Number(diff_tempo1 / seco_power1);
-                speed_warm_test_1 = Number(double_seco_power1);
+
+                let k1 = []; 
+                k1 = amma01.split('/');
+
+                let k1_1 = Number(k1[2]) + 2000;
+                let k2 = k1_1;  // year
+
+                let k3 = Number(k1[1]); // mounth
+                let k4 = Number(k1[0]); // day
+
+                let k5 = String(k2 + '-' + k3 + '-' + k4 + ' ' + amma11);
+                dateTime_min1 = new Date(k5); // Linux date min
+
+
                 
 
+
+/*
+                let k6 = []; 
+                k6 = amma12.split('/');
+
+                let k6_1 = Number(k6[2]) + 2000;
+                let k7 = k6_1;  // year
+
+                let k8 = Number(k6[1]); // mounth
+                let k9 = Number(k6[0]); // day
+*/
+                let k10 = String(k2 + '-' + k3 + '-' + k4 + ' ' + amma12);
+                dateTime_max1 = new Date(k10); // Linux date max
+
+
+
+
+
+
+
+                //dateTime_min1 = new Date(amma11);
+                //dateTime_max1 = new Date(amma12);
+                diff_time_power1 = dateTime_max1 - dateTime_min1;
+
+
+
+                
+
+
+                diff_amma1 = String(dateTime_max1 - dateTime_min1);
+                diff_tempo1 = tempo21 - tempo11;
+
+
+                
+
+
+                //seco_power1 = Number(   Math.floor((diff_time_power1 / 1000) / 60));
+
+                //const totalSeconds = 565; diff_time_power1
+
+                // 👇️ get the number of full minutes
+                const minutes_warm = Math.floor((diff_time_power1 / 1000) / 60);
+                
+                // 👇️ get the remainder of the seconds
+                const seconds_warm = (diff_time_power1 / 1000) % 60;
+                
+                function padTo2Digits(num) {
+                  return num.toString().padStart(2, '0');
+                }
+                
+                // ✅ format as MM:SS
+                const result_power_time = `${padTo2Digits(minutes_warm)}:${padTo2Digits(seconds_warm)}`;
+                //console.log(result_power_time); // 👉️ "09:25"
+                //seco_power1 = Number(result_power_time);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                double_seco_power1 = Number(diff_tempo1 / (diff_time_power1 / 1000));
+                speed_warm_test_1 = Number(double_seco_power1 * 60);
+                speed_warm_test_1 = speed_warm_test_1.toFixed(2);
+                
+                //console.log(speed_warm_test_1);
 
 
         // Средняя скорость нагрева
@@ -820,10 +947,24 @@ document.getElementById('data_stop_testing').value = date_end_test;
 document.getElementById('time_stop_testing').value = time_end_test;
 
 document.getElementById('middle_speed_of_warm').value =  speed_warm_test_1;
-console.log(power1);
-console.log(warm_temp_1);
 
 
+
+/*
+let date_15 = new Date('2022-05-25 9:00');
+let date_16 = new Date('2022-05-25 10:00');
+let date_17 = date_16 - date_15;
+console.log(date_17); // 2022-05-25T00:00:00.000Z
+*/
+
+
+
+
+
+
+//console.log(date_15);
+
+// pom[i][10] === 1) && (pom[i][6]
 };
 
 
