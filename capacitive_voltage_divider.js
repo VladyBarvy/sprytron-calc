@@ -7,8 +7,6 @@ const form = document.getElementById('form')
 form.addEventListener('submit', function(event) {
 event.preventDefault();
 
-
-
 const result_1 = document.querySelector('#result');
 const result_2 = document.querySelector('#result_current');
 
@@ -20,8 +18,116 @@ let data_1 = parseFloat(input_voltage_data, 10);
 let data_2 = parseFloat(capacity_r1_data, 10);
 let data_3 = parseFloat(capacity_r2_data, 10);
 
-data_2 = data_2 * 0.000001;
-data_3 = data_3 * 0.000001;
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 *= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+let list_of_input_capacity_1 = document.getElementById('input_capacity_1');
+let selectedValue_of_input_capacity_1 = list_of_input_capacity_1.options[list_of_input_capacity_1.selectedIndex].value;
+
+
+if (selectedValue_of_input_capacity_1 === "пФ") {
+  data_2 /= 1000000000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "нФ") {
+  data_2 /= 1000000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "мкФ") {
+  data_2 /= 1000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "мФ") {
+  data_2 /= 1000;
+  
+}
+
+if (selectedValue_of_input_capacity_1 === "Ф") {
+  data_2 *= 1;
+  
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////
+
+
+
+let list_of_input_capacity_2 = document.getElementById('input_capacity_2');
+let selectedValue_of_input_capacity_2 = list_of_input_capacity_2.options[list_of_input_capacity_2.selectedIndex].value;
+
+
+if (selectedValue_of_input_capacity_2 === "пФ") {
+  data_3 /= 1000000000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "нФ") {
+  data_3 /= 1000000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "мкФ") {
+  data_3 /= 1000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "мФ") {
+  data_3 /= 1000;
+  
+}
+
+if (selectedValue_of_input_capacity_2 === "Ф") {
+  data_3 *= 1;
+  
+}
+
+
+
+
+
+
+//data_2 = data_2 * 0.000001;
+//data_3 = data_3 * 0.000001;
 
 let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
 
@@ -136,8 +242,109 @@ let data_1 = parseFloat(input_voltage_data, 10);
 let data_2 = parseFloat(capacity_r1_data, 10);
 let data_3 = parseFloat(capacity_r2_data, 10);
 
-data_2 = data_2 * 0.000001;
-data_3 = data_3 * 0.000001;
+
+
+
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 *= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+let list_of_input_capacity_1 = document.getElementById('input_capacity_1');
+let selectedValue_of_input_capacity_1 = list_of_input_capacity_1.options[list_of_input_capacity_1.selectedIndex].value;
+
+
+if (selectedValue_of_input_capacity_1 === "пФ") {
+  data_2 /= 1000000000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "нФ") {
+  data_2 /= 1000000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "мкФ") {
+  data_2 /= 1000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "мФ") {
+  data_2 /= 1000;
+  
+}
+
+if (selectedValue_of_input_capacity_1 === "Ф") {
+  data_2 *= 1;
+  
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////
+
+
+
+let list_of_input_capacity_2 = document.getElementById('input_capacity_2');
+let selectedValue_of_input_capacity_2 = list_of_input_capacity_2.options[list_of_input_capacity_2.selectedIndex].value;
+
+
+if (selectedValue_of_input_capacity_2 === "пФ") {
+  data_3 /= 1000000000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "нФ") {
+  data_3 /= 1000000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "мкФ") {
+  data_3 /= 1000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "мФ") {
+  data_3 /= 1000;
+  
+}
+
+if (selectedValue_of_input_capacity_2 === "Ф") {
+  data_3 *= 1;
+  
+}
+
+
+//data_2 = data_2 * 0.000001;
+//data_3 = data_3 * 0.000001;
 
 let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
 
@@ -200,12 +407,129 @@ const input_voltage_data = document.getElementById('input_voltage').value;
 const capacity_r1_data = document.getElementById('capacity_r1').value;
 const capacity_r2_data = document.getElementById('capacity_r2').value; 
 
+
+
+
+
+
+
 let data_1 = parseFloat(input_voltage_data, 10);
 let data_2 = parseFloat(capacity_r1_data, 10);
 let data_3 = parseFloat(capacity_r2_data, 10);
 
-data_2 = data_2 * 0.000001;
-data_3 = data_3 * 0.000001;
+
+
+
+
+
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 *= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+let list_of_input_capacity_1 = document.getElementById('input_capacity_1');
+let selectedValue_of_input_capacity_1 = list_of_input_capacity_1.options[list_of_input_capacity_1.selectedIndex].value;
+
+
+if (selectedValue_of_input_capacity_1 === "пФ") {
+  data_2 /= 1000000000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "нФ") {
+  data_2 /= 1000000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "мкФ") {
+  data_2 /= 1000000;
+
+}
+
+if (selectedValue_of_input_capacity_1 === "мФ") {
+  data_2 /= 1000;
+  
+}
+
+if (selectedValue_of_input_capacity_1 === "Ф") {
+  data_2 *= 1;
+  
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////
+
+
+
+let list_of_input_capacity_2 = document.getElementById('input_capacity_2');
+let selectedValue_of_input_capacity_2 = list_of_input_capacity_2.options[list_of_input_capacity_2.selectedIndex].value;
+
+
+if (selectedValue_of_input_capacity_2 === "пФ") {
+  data_3 /= 1000000000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "нФ") {
+  data_3 /= 1000000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "мкФ") {
+  data_3 /= 1000000;
+
+}
+
+if (selectedValue_of_input_capacity_2 === "мФ") {
+  data_3 /= 1000;
+  
+}
+
+if (selectedValue_of_input_capacity_2 === "Ф") {
+  data_3 *= 1;
+  
+}
+
+
+
+
+
+
+
+//data_2 = data_2 * 0.000001;
+//data_3 = data_3 * 0.000001;
 
 let resu_1 = (data_1 * data_2) / (data_2 + data_3); // выходное напряжение
 
