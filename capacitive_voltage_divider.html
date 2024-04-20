@@ -152,7 +152,7 @@
 
 
 
-                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
                   <label for="output_current_show">Ток через делитель I</label> 
                 </div>
 
@@ -161,7 +161,7 @@
                 <b id="result_current">0</b>
               -->
 
-              <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 170px; height: 20px; margin-bottom: 20px;"/>
+              <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 170px; height: 20px; "/>
                 
 
                 
@@ -170,7 +170,50 @@
                     <option атрибуты>мА</option> 
                     <option атрибуты>А</option> 
                   </select>
+
+
+
+
+
+
+
+<!--  ////////////////////////////////////// -->
+                  <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                    <label for="output_current_show">Коэффициент деления</label> 
+                  </div>
+
+                  <input type="number" name="total_koeff_divid_cap" id="total_koeff_divid_cap" step="0.000001" style="width: 170px; height: 20px; "/>
+<!--  ////////////////////////////////////// -->
                 
+
+
+
+
+
+<!--  ////////////////////////////////////// -->
+                  <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                    <label for="output_reactive_show">Реактивное сопротивление</label> 
+                  </div>
+
+                  <input type="number" name="total_reactive" id="total_reactive" step="0.000001" style="width: 170px; height: 20px; margin-bottom: 20px;"/>
+
+                  <select name="select" style="max-width:90%;" id = "out_reactive">
+                    <option атрибуты>Ом</option> 
+                    <option атрибуты>кОм</option> 
+                    <option атрибуты>МОм</option>
+                    <option атрибуты>ГОм</option> 
+                  </select>
+<!--  ////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+
+
 
             </div>
 
