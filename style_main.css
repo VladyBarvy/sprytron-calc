@@ -1,5 +1,5 @@
 .header-h1 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     font-family: 'Century Gothic', sans-serif;
     color: #3ba0ff;
@@ -62,7 +62,7 @@ h1.change-text{
 
 
    
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 10px 10px;
     margin: 20px auto;
 /*
     width: 800px;
@@ -75,7 +75,7 @@ h1.change-text{
 
 
 .button {
-    width: 190px;
+    width: 150px;
     height: 90px;
 
     display: inline-block;
@@ -103,7 +103,7 @@ h1.change-text{
 
 
 .table_cell {
-    width: 210px;
+    width: 160px;
     height:100px;
 }
 

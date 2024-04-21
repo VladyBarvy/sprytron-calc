@@ -673,7 +673,8 @@ function processFiles_4(files) {
 
         // Заданная длительность испытания
         test_time_code = pom[1][11];
-        let poaq = Number(test_time_code) * 60;
+        //console.log('birs' + '   ' + Number(test_time_code));
+        let poaq = Number(test_time_code);
         test_time_code = String(poaq);
 
         // Заданная максимальная температура
@@ -770,7 +771,7 @@ function processFiles_4(files) {
                 info_max_temp_warming = pom[1][12];  // заданная максимальная температура нагрева
 
 
-
+                console.log(data_power_1[0]);
 
 
                 for (let i = 0; i < power1.length; i += 1)
@@ -888,13 +889,13 @@ function processFiles_4(files) {
 
 
 
-
+                
 
                 double_seco_power1 = Number(diff_tempo1 / (diff_time_power1 / 1000));
                 speed_warm_test_1 = Number(double_seco_power1 * 60);
                 speed_warm_test_1 = speed_warm_test_1.toFixed(2);
                 
-                //console.log(speed_warm_test_1);
+                console.log(speed_warm_test_1);
 
 
         // Средняя скорость нагрева
