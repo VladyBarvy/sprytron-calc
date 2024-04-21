@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_serial_paralel_cap.css">
+    <title>Последовательное и параллельное соединение конденсаторов</title>
+</head>
+<body>
+    
+    <!-- -->
+<div class="parent">
+      
+    
+  <table  class ="table"  >  
+      
+    <div class="header-h1">
+        <a href="index.html" style="text-decoration: none;">
+            <h1 class="change-text">
+                <div>ПОСЛЕДОВАТЕЛЬНОЕ И ПАРАЛЛЕЛЬНОЕ</div>
+                <div>СОЕДИНЕНИЕ КОНДЕНСАТОРОВ</div>
+            </h1>
+        </a>
+
+      <!--  border="1"  -->
+      
+    <tr>
+  
+
+  
+  <!-- 
+      <th>  
+        <img src="images\res_dev_1.png" alt="Resistor Devider">
+      </th>
+-->
+
+      <th align="center">  
+          <form id="form">
+
+           <!--  <img src="images\cap_dev_1.png" alt="Capacitive Devider"> -->
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="input_voltage_show"  >Соединение конденсаторов</label>
+              </div>
+
+
+
+
+             
+                <div class="container" id="radiobutt_serial_parallel">
+                  <label for="radio-one" class="form-radio-hidden">
+                    <input type="radio" name="demo" value="1" id="radio-one" checked>
+                    <span class="radio"></span>
+                    <span class="text" >Последовательное</span>
+                  </label>
+                  <label for="radio-two" class="form-radio-hidden">
+                    <input type="radio" name="demo" value="2" id="radio-two">
+                    <span class="radio"></span>
+                    <span class="text" >Параллельное</span>
+                  </label>
+                </div>
+            
+           
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="input_number_resistors"  >Количество конденсаторов</label>
+              </div>
+
+              <div class="container">
+                <div style="margin-bottom: 20px;">
+                  <input class="form_style" id="numb_resist" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" min="2" max="5" step="1" value="2" required>  <b style="font-family: 'Century Gothic', sans-serif;">шт</b>
+                </div>
+              </div>
+
+              <div class="add_item" style="margin-bottom: 10px;" id="button_style">
+                <button class="button"  id="button_add" type="button" onclick="enableField()">Выбрать</button>
+              </div>
+
+              <script>
+                
+                function enableField(){
+                  let get_number_of_resist = document.getElementById("numb_resist").value;
+                  const data_1 = parseFloat(get_number_of_resist, 10);
+                  if (data_1 > 5) {
+                    data_1 = 5;
+                    const num_res_out_show = document.querySelector('numb_resist');
+                    num_res_out_show.textContent = data_1.toFixed(0);  
+                  }
+
+                  let q3 = document.getElementById("capacity_c3");
+                  let q4 = document.getElementById("capacity_c4");
+                  let q5 = document.getElementById("capacity_c5");
+                  if (data_1 === 2) {
+                    q3.disabled = true;
+                    q4.disabled = true;
+                    q5.disabled = true;
+                  }
+                  
+                  if (data_1 === 3) {
+                    q3.disabled = false;
+                    q4.disabled = true;
+                    q5.disabled = true;
+                  }
+
+                  if (data_1 === 4) {
+                    q3.disabled = false;
+                    q4.disabled = false;
+                    q5.disabled = true;
+                  }
+
+                  if (data_1 === 5) {
+                    q3.disabled = false;
+                    q4.disabled = false;
+                    q5.disabled = false;
+                  }
+                }
+              </script>
+
+            </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="forms_style_edition">
+
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_1" id="resistance_1_lab">Ёмкость C1</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="capacity_c1" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  required> <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                <select name="select" style="max-width:70%;" id = "input_capacity_1">
+                  <option атрибуты>пФ</option>
+                  <option атрибуты>нФ</option>
+                  <option атрибуты>мкФ</option>
+                  <option атрибуты>мФ</option>
+                  <option атрибуты>Ф</option> 
+                </select>
+              </div>
+
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_2"  id="resistance_2_lab">Ёмкость C2</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="capacity_c2" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  required> <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                <select name="select" style="max-width:70%;" id = "input_capacity_2">
+                  <option атрибуты>пФ</option>
+                  <option атрибуты>нФ</option>
+                  <option атрибуты>мкФ</option>
+                  <option атрибуты>мФ</option>
+                  <option атрибуты>Ф</option> 
+                </select>
+              </div>
+
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_3"  id="resistance_3_lab">Ёмкость C3</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="capacity_c3" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  disabled> <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                <select name="select" style="max-width:70%;" id = "input_capacity_3">
+                  <option атрибуты>пФ</option>
+                  <option атрибуты>нФ</option>
+                  <option атрибуты>мкФ</option>
+                  <option атрибуты>мФ</option>
+                  <option атрибуты>Ф</option> 
+                </select>
+              </div>
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_4"  id="resistance_4_lab">Ёмкость C4</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="capacity_c4" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  disabled> <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                <select name="select" style="max-width:70%;" id = "input_capacity_4">
+                  <option атрибуты>пФ</option>
+                  <option атрибуты>нФ</option>
+                  <option атрибуты>мкФ</option>
+                  <option атрибуты>мФ</option>
+                  <option атрибуты>Ф</option> 
+                </select>
+              </div>
+
+  
+              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                <label for="resistance_5"  id="resistance_5_lab">Ёмкость C5</label>
+              </div>
+              <div style="margin-bottom: 20px;">
+                <input class="form_style" id="capacity_c5" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');"  disabled> <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                <select name="select" style="max-width:70%;" id = "input_capacity_5">
+                  <option атрибуты>пФ</option>
+                  <option атрибуты>нФ</option>
+                  <option атрибуты>мкФ</option>
+                  <option атрибуты>мФ</option>
+                  <option атрибуты>Ф</option> 
+                </select>
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+           
+
+<!--  <div class="button-addy" id="button_style" >  -->
+
+ 
+
+
+
+            <div class="button-row" id="button_style">
+              <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+              <button class="button" type="reset" id="button_ochistit" onclick="disableAll()">Очистить</button>
+
+              <script>
+                  function disableAll(){
+                    let get3= document.getElementById("resistance_r3")
+                    let get4= document.getElementById("resistance_r4")
+                    let get5= document.getElementById("resistance_r5")
+                    get3.disabled = true;
+                    get4.disabled = true;
+                    get5.disabled = true;
+                  }
+              </script>
+            </div>
+
+
+
+                
+            <div class="answers_style_edition" id="answers">
+
+              <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="output_voltage_show">Общая ёмкость</label> 
+              </div>
+
+                
+                  <input type="number" name="total" id="total" step="0.000000000000000001" style="width: 155px; height: 20px; margin-bottom: 20px;"/>
+                
+
+
+                
+                  <select name="select" style="max-width:70%;" id = "out_resistance">
+                    <option атрибуты>Ф</option>
+                    <option атрибуты>мФ</option> 
+                    <option атрибуты>мкФ</option>
+                    <option атрибуты>нФ</option>
+                    <option атрибуты>пФ</option>
+                  </select>
+                
+
+
+            </div>
+
+
+
+
+      
+
+          </form>
+      </th>
+
+    </tr>
+
+
+
+
+    
+
+
+  </table>
+
+
+
+</div>
+
+
+
+
+      <script src="serial_paralel_cap.js"></script>
+
+
+
+
+</body>
+</html>
