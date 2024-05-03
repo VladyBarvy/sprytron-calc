@@ -303,9 +303,65 @@ if (selectedValue_of_input_capacity_5 === "Ф") {
     let select_resistance = document.getElementById('out_resistance');
     let select_value_resistance = select_resistance.options[select_resistance.selectedIndex].value;
     
-    const poop = select_value_resistance.toString();
+    let poop = select_value_resistance.toString();
     
     
+    //console.log(resu_1);
+
+
+
+
+    // предпочтительнее фарады (Ф)
+    if((resu_1 < 1000) && (resu_1 > 1)) {
+      poop = "Ф";
+      let select_resistance = document.getElementById('out_resistance');
+      select_resistance.value = poop;
+    }
+
+
+
+    // предпочтительнее миллифарады (мФ)
+    if((resu_1 < 1) && (resu_1 > 0.001)) {
+      poop = "мФ";
+      let select_resistance = document.getElementById('out_resistance');
+      select_resistance.value = poop;
+    }
+
+
+
+    // предпочтительнее микрофарады (мкФ)
+    if((resu_1 < 0.001) && (resu_1 > 0.000001)) {
+      poop = "мкФ";
+      let select_resistance = document.getElementById('out_resistance');
+      select_resistance.value = poop;
+    }
+
+
+    // предпочтительнее нанофарады (нФ)
+    if((resu_1 < 0.000001) && (resu_1 > 0.000000001)) {
+      poop = "нФ";
+      let select_resistance = document.getElementById('out_resistance');
+      select_resistance.value = poop;
+    }
+
+
+    // предпочтительнее пикофарады (пФ)
+    if((resu_1 < 0.000000001) && (resu_1 > 0.000000000001)) {
+      poop = "пФ";
+      let select_resistance = document.getElementById('out_resistance');
+      select_resistance.value = poop;
+    }
+
+
+
+
+   
+    select_resistance = document.getElementById('out_resistance');
+    select_value_resistance = select_resistance.options[select_resistance.selectedIndex].value;
+    
+    poop = select_value_resistance.toString();
+
+
     
  
     if (poop === "Ф") {
@@ -334,6 +390,9 @@ if (selectedValue_of_input_capacity_5 === "Ф") {
     }
     
  
+
+
+
     
     
     if (connection_diagram === 1) {
@@ -374,10 +433,47 @@ if (selectedValue_of_input_capacity_5 === "Ф") {
     
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
-    
+    // происходит пересчёт, если для результата в строке "Общая ёмкость" была выбрана другая размерность из выпадающего списка
     const list_of_resistance = document.querySelector('#out_resistance');
     
     list_of_resistance.addEventListener('change', function(e) {  
@@ -385,7 +481,7 @@ if (selectedValue_of_input_capacity_5 === "Ф") {
     
     
     
-      const result_1 = document.querySelector('#result');
+      const result_1 = document.querySelector('#total');
 
     
       const resistance_r1_data = document.getElementById('capacity_c1').value;
@@ -656,7 +752,7 @@ if (selectedValue_of_input_capacity_5 === "Ф") {
       
     
 
-      console.log(resu_1);
+      //
       
 
       if (selectedValue === "пФ") {
@@ -684,19 +780,36 @@ if (selectedValue_of_input_capacity_5 === "Ф") {
         resu_2 *= 1;
       }
 
-      console.log(resu_1);
+      //console.log(connection_diagram);
+      //console.log(resu_1);
+      //console.log(resu_2);
+    
+      document.querySelector('#total').value = resu_1.toFixed(3);
+      document.querySelector('#total').value = resu_2.toFixed(3);
+    
 
-    
-    
-      document.getElementById('total').value = resu_1.toFixed(3);
-      document.getElementById('total').value = resu_2.toFixed(3);
-    
+      //console.log(resu_1.toFixed(3));
+
+
+
+      /*
       if (connection_diagram === 1) {
       result_1.textContent = resu_1.toFixed(3);
       } else {
         result_1.textContent = resu_2.toFixed(3);
       }
-      
+      */
+
+      if (connection_diagram === 1) {
+        document.getElementById('total').value = resu_1.toFixed(3);
+        result_1.textContent = resu_1.toFixed(3);
+       
+        } 
+    
+        if (connection_diagram === 2) {
+          document.getElementById('total').value = resu_2.toFixed(3);
+          result_1.textContent = resu_2.toFixed(3);
+        } 
     
     });
     
