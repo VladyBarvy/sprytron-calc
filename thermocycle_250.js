@@ -771,7 +771,7 @@ function processFiles_4(files) {
                 info_max_temp_warming = pom[1][12];  // заданная максимальная температура нагрева
 
 
-                console.log(data_power_1[0]);
+              
 
 
                 for (let i = 0; i < power1.length; i += 1)

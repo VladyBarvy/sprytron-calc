@@ -91,58 +91,74 @@
 
             <div class="forms_style_edition">
 
-              <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
-                <label for="input_voltage">Напряжение</label>
+
+              <div id="stepOne">
+                <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="input_voltage">Напряжение</label>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <input name="voltage_name" class="form_style" id="voltage_input" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required> 
+                  
+                  <!-- <b style="font-family: 'Century Gothic', sans-serif;">В</b> -->
+
+                  <select name="select" style="max-width:90%;" id = "select_voltage">
+                    <option атрибуты>мВ</option>
+                    <option атрибуты>В</option>
+                    <option атрибуты>кВ</option> 
+                  </select>
+                </div>
               </div>
-
-              <div style="margin-bottom: 20px;">
-                <input name="voltage_name" class="form_style" id="voltage_input" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required> 
-                
-                <!-- <b style="font-family: 'Century Gothic', sans-serif;">В</b> -->
-
-                <select name="select" style="max-width:90%;" id = "select_voltage">
-                  <option атрибуты>мВ</option>
-                  <option атрибуты>В</option>
-                  <option атрибуты>кВ</option> 
-                </select>
-              </div>
-
-
         
 
 
+              <div id="stepTwo">
+                <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                  <label for="input_resistance">Сопротивление</label>
+                </div>
 
-              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
-                <label for="input_resistance">Сопротивление</label>
+                <div style="margin-bottom: 20px;">
+                  <input name="resistance_name" class="form_style" id="resistance_input" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required> 
+                  
+                  <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                  <select name="select" style="max-width:90%;" id = "select_resistance">
+                    <option атрибуты>мкОм</option>
+                    <option атрибуты>мОм</option>
+                    <option атрибуты>Ом</option> 
+                    <option атрибуты>кОм</option> 
+                    <option атрибуты>МОм</option> 
+                    <option атрибуты>ГОм</option> 
+                  </select>
+                </div>
               </div>
 
-              <div style="margin-bottom: 20px;">
-                <input name="resistance_name" class="form_style" id="resistance_input" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required> 
-                
-                <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
 
-                <select name="select" style="max-width:90%;" id = "select_resistance">
-                  <option атрибуты>мкОм</option>
-                  <option атрибуты>мОм</option>
-                  <option атрибуты>Ом</option> 
-                  <option атрибуты>кОм</option> 
-                  <option атрибуты>МОм</option> 
-                  <option атрибуты>ГОм</option> 
-                </select>
+
+
+
+
+              <div id="stepThree">
+                <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                  <label for="input_current">Ток</label>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <input name="current_name" class="form_style" id="current_input" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required> 
+                  
+                  <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+
+                  <select name="select" style="max-width:90%;" id = "select_current">
+                    <option атрибуты>мкА</option>
+                    <option атрибуты>мА</option>
+                    <option атрибуты>А</option> 
+                    <option атрибуты>кА</option> 
+                  </select>
+                </div>
               </div>
 
 
 
-
-<!--
-              <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
-                <label for="input_current">Ток</label>
-              </div>
-
-              <div style="margin-bottom: 20px;">
-                <input class="form_style" id="current_input" type="number" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required>  <b style="font-family: 'Century Gothic', sans-serif;">А</b>
-              </div>
--->
 
 
             </div>
@@ -188,7 +204,7 @@
 
 
 
-
+              <div id="watchOne">
                 <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
                   <label for="output_current_show">Ток</label> 
                 </div>
@@ -200,11 +216,47 @@
                   <option атрибуты>мА</option> 
                   <option атрибуты>А</option> 
                 </select>
+              </div>
 
 
 
 
 
+              <div id="watchTwo">
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_voltage_show">Напряжение</label> 
+                </div>
+
+                <input type="number" name="total_volt" id="total_volt" step="0.000001" style="width: 170px; height: 20px; "/>
+                
+                <select name="select" style="max-width:90%;" id = "out_volt">
+                  <option атрибуты>мВ</option>
+                  <option атрибуты>В</option> 
+                  <option атрибуты>кВ</option> 
+                </select>
+              </div>
+
+
+
+
+
+
+              <div id="watchThree">
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_current_show">Сопротивление</label> 
+                </div>
+
+                <input type="number" name="total_resist" id="total_resist" step="0.000001" style="width: 170px; height: 20px; "/>
+                
+                <select name="select" style="max-width:90%;" id = "out_resist">
+                  <option атрибуты>мкОм</option>
+                  <option атрибуты>мОм</option>
+                  <option атрибуты>Ом</option> 
+                  <option атрибуты>кОм</option> 
+                  <option атрибуты>МОм</option> 
+                  <option атрибуты>ГОм</option> 
+                </select>
+              </div>
 
 
 
@@ -228,7 +280,7 @@
                   <label for="output_power_show">Мощность рассеивания</label> 
                 </div>
 
-                <input type="number" name="total_power" id="total_power" step="0.000001" style="width: 170px; height: 20px; "/>
+                <input type="number" name="total_power" id="total_power" step="0.000001" style="width: 170px; height: 20px; margin-bottom: 20px;"/>
                 
                 <select name="select" style="max-width:90%;" id = "out_power">
                   <option атрибуты>мкВт</option> 
@@ -241,7 +293,7 @@
 
 
 
-
+                
 
                 
 
