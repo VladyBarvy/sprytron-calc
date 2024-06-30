@@ -45,27 +45,84 @@
                 <label for="input_voltage_show">Рассчитать</label>
               </div>
 
-                <div class="container" id="radiobutt_serial_parallel">
+                <div class="container" id="radiobutt_serial_parallel" style="margin-bottom: 20px;">
 
                   <label for="radio-one" class="form-radio-hidden">
-                    <input type="radio" name="demo" value="1" id="radio-one" checked>
+                    <input type="radio" name="demo" value="1" id="radio-one"  onclick="enableField()" checked>
                     <span class="radio"></span>
                     <span class="text" >Ток</span>
                   </label>
 
                   <label for="radio-two" class="form-radio-hidden">
-                    <input type="radio" name="demo" value="2" id="radio-two">
+                    <input type="radio" name="demo" value="2" id="radio-two" onclick="enableField()">
                     <span class="radio"></span>
                     <span class="text" >Напряжение</span>
                   </label>
 
                   <label for="radio-three" class="form-radio-hidden">
-                    <input type="radio" name="demo" value="3" id="radio-three">
+                    <input type="radio" name="demo" value="3" id="radio-three" onclick="enableField()">
                     <span class="radio"></span>
                     <span class="text" >Сопротивление</span>
                   </label>
 
                 </div>
+
+
+
+
+
+
+
+
+
+                <script>
+                
+                  function enableField(){
+                    let q1 = document.getElementById("voltage_input");
+                    let q2 = document.getElementById("resistance_input");
+                    let q3 = document.getElementById("current_input");
+
+
+
+                    document.querySelectorAll('input[type="radio"][name="demo"]').forEach((button) => {
+                      button.addEventListener('change', function() {
+                        if (this.checked) {
+                            //console.log(`Предыдущий выбор: ${previousChoice || "не был сделан"}; Текущий выбор: ${this.value}`);
+                            previousChoice = this.value; // И вот новый выбор!
+
+                          // если требуется рассчитать ТОК
+                          if (this.value === '1') { 
+                            q1.disabled = false; // напряжение
+                            q2.disabled = false; // сопротивление
+                            q3.disabled = true; // ток
+                          }
+
+                          // если требуется рассчитать НАПРЯЖЕНИЕ
+                          if (this.value === '2') { 
+                            q1.disabled = true; // напряжение
+                            q2.disabled = false; // сопротивление
+                            q3.disabled = false; // ток
+                          }
+
+                          // если требуется рассчитать СОПРОТИВЛЕНИЕ
+                          if (this.value === '3') { 
+                            q1.disabled = false; // напряжение
+                            q2.disabled = true; // сопротивление
+                            q3.disabled = false; // ток
+                          }
+
+                        }
+                      });
+                    });
+                    
+                  }
+
+
+                  /* q5.disabled = true; */
+                </script>
+
+
+
             
             </div>
 
@@ -103,8 +160,8 @@
                   <!-- <b style="font-family: 'Century Gothic', sans-serif;">В</b> -->
 
                   <select name="select" style="max-width:90%;" id = "select_voltage">
-                    <option атрибуты>мВ</option>
                     <option атрибуты>В</option>
+                    <option атрибуты>мВ</option>
                     <option атрибуты>кВ</option> 
                   </select>
                 </div>
@@ -123,9 +180,9 @@
                   <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
 
                   <select name="select" style="max-width:90%;" id = "select_resistance">
+                    <option атрибуты>Ом</option> 
                     <option атрибуты>мкОм</option>
                     <option атрибуты>мОм</option>
-                    <option атрибуты>Ом</option> 
                     <option атрибуты>кОм</option> 
                     <option атрибуты>МОм</option> 
                     <option атрибуты>ГОм</option> 
@@ -149,9 +206,9 @@
                   <!-- <b style="font-family: 'Century Gothic', sans-serif;">Ом</b> -->
 
                   <select name="select" style="max-width:90%;" id = "select_current">
+                    <option атрибуты>А</option>
                     <option атрибуты>мкА</option>
-                    <option атрибуты>мА</option>
-                    <option атрибуты>А</option> 
+                    <option атрибуты>мА</option>  
                     <option атрибуты>кА</option> 
                   </select>
                 </div>
@@ -212,9 +269,10 @@
                 <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 170px; height: 20px; "/>
                 
                 <select name="select" style="max-width:90%;" id = "out_cur">
+                  <option атрибуты>А</option>
                   <option атрибуты>мкА</option> 
                   <option атрибуты>мА</option> 
-                  <option атрибуты>А</option> 
+                  <option атрибуты>кА</option> 
                 </select>
               </div>
 
@@ -230,8 +288,8 @@
                 <input type="number" name="total_volt" id="total_volt" step="0.000001" style="width: 170px; height: 20px; "/>
                 
                 <select name="select" style="max-width:90%;" id = "out_volt">
-                  <option атрибуты>мВ</option>
                   <option атрибуты>В</option> 
+                  <option атрибуты>мВ</option> 
                   <option атрибуты>кВ</option> 
                 </select>
               </div>
@@ -249,9 +307,9 @@
                 <input type="number" name="total_resist" id="total_resist" step="0.000001" style="width: 170px; height: 20px; "/>
                 
                 <select name="select" style="max-width:90%;" id = "out_resist">
+                  <option атрибуты>Ом</option>
                   <option атрибуты>мкОм</option>
                   <option атрибуты>мОм</option>
-                  <option атрибуты>Ом</option> 
                   <option атрибуты>кОм</option> 
                   <option атрибуты>МОм</option> 
                   <option атрибуты>ГОм</option> 
@@ -283,9 +341,9 @@
                 <input type="number" name="total_power" id="total_power" step="0.000001" style="width: 170px; height: 20px; margin-bottom: 20px;"/>
                 
                 <select name="select" style="max-width:90%;" id = "out_power">
+                  <option атрибуты>Вт</option> 
                   <option атрибуты>мкВт</option> 
                   <option атрибуты>мВт</option> 
-                  <option атрибуты>Вт</option> 
                   <option атрибуты>кВт</option> 
                   <option атрибуты>МВт</option> 
                 </select>
