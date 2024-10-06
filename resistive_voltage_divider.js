@@ -79,22 +79,22 @@ let selectedValue_of_input_resistance_r1 = list_of_input_resistance_r1.options[l
 
 
 if (selectedValue_of_input_resistance_r1 === "Ом") {
-  data_1 *= 1;
+  data_2 *= 1;
 
 }
 
 if (selectedValue_of_input_resistance_r1 === "кОм") {
-  data_1 *= 1000;
+  data_2 *= 1000;
 
 }
 
 if (selectedValue_of_input_resistance_r1 === "МОм") {
-  data_1 *= 1000000;
+  data_2 *= 1000000;
   
 }
 
 if (selectedValue_of_input_resistance_r1 === "ГОм") {
-  data_1 *= 1000000000;
+  data_2 *= 1000000000;
   
 }
 
@@ -116,22 +116,22 @@ let selectedValue_of_input_resistance_r2 = list_of_input_resistance_r2.options[l
 
 
 if (selectedValue_of_input_resistance_r2 === "Ом") {
-  data_1 *= 1;
+  data_3 *= 1;
 
 }
 
 if (selectedValue_of_input_resistance_r2 === "кОм") {
-  data_1 *= 1000;
+  data_3 *= 1000;
 
 }
 
 if (selectedValue_of_input_resistance_r2 === "МОм") {
-  data_1 *= 1000000;
+  data_3 *= 1000000;
   
 }
 
 if (selectedValue_of_input_resistance_r2 === "ГОм") {
-  data_1 *= 1000000000;
+  data_3 *= 1000000000;
   
 }
 
@@ -314,9 +314,130 @@ const input_voltage_data = document.getElementById('input_voltage').value;
 const resistance_r1_data = document.getElementById('resistance_r1').value;
 const resistance_r2_data = document.getElementById('resistance_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(resistance_r1_data, 10);
+let data_3 = parseFloat(resistance_r2_data, 10);
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 /= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r1 = document.getElementById('input_resistance_r1');
+let selectedValue_of_input_resistance_r1 = list_of_input_resistance_r1.options[list_of_input_resistance_r1.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r1 === "Ом") {
+  data_2 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "кОм") {
+  data_2 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "МОм") {
+  data_2 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r1 === "ГОм") {
+  data_2 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r2 = document.getElementById('input_resistance_r2');
+let selectedValue_of_input_resistance_r2 = list_of_input_resistance_r2.options[list_of_input_resistance_r2.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r2 === "Ом") {
+  data_3 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "кОм") {
+  data_3 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "МОм") {
+  data_3 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r2 === "ГОм") {
+  data_3 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 let resu_1 = (data_1 * data_3) / (data_2 + data_3);
 let resu_2 = data_1 / (data_2 + data_3);
@@ -373,9 +494,127 @@ const input_voltage_data = document.getElementById('input_voltage').value;
 const resistance_r1_data = document.getElementById('resistance_r1').value;
 const resistance_r2_data = document.getElementById('resistance_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(resistance_r1_data, 10);
+let data_3 = parseFloat(resistance_r2_data, 10);
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 /= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r1 = document.getElementById('input_resistance_r1');
+let selectedValue_of_input_resistance_r1 = list_of_input_resistance_r1.options[list_of_input_resistance_r1.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r1 === "Ом") {
+  data_2 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "кОм") {
+  data_2 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "МОм") {
+  data_2 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r1 === "ГОм") {
+  data_2 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r2 = document.getElementById('input_resistance_r2');
+let selectedValue_of_input_resistance_r2 = list_of_input_resistance_r2.options[list_of_input_resistance_r2.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r2 === "Ом") {
+  data_3 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "кОм") {
+  data_3 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "МОм") {
+  data_3 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r2 === "ГОм") {
+  data_3 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 let resu_1 = (data_1 * data_3) / (data_2 + data_3);
 let resu_2 = data_1 / (data_2 + data_3);
@@ -451,9 +690,125 @@ const input_voltage_data = document.getElementById('input_voltage').value;
 const resistance_r1_data = document.getElementById('resistance_r1').value;
 const resistance_r2_data = document.getElementById('resistance_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(resistance_r1_data, 10);
+let data_3 = parseFloat(resistance_r2_data, 10);
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 /= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r1 = document.getElementById('input_resistance_r1');
+let selectedValue_of_input_resistance_r1 = list_of_input_resistance_r1.options[list_of_input_resistance_r1.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r1 === "Ом") {
+  data_2 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "кОм") {
+  data_2 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "МОм") {
+  data_2 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r1 === "ГОм") {
+  data_2 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r2 = document.getElementById('input_resistance_r2');
+let selectedValue_of_input_resistance_r2 = list_of_input_resistance_r2.options[list_of_input_resistance_r2.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r2 === "Ом") {
+  data_3 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "кОм") {
+  data_3 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "МОм") {
+  data_3 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r2 === "ГОм") {
+  data_3 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 let resu_1 = (data_1 * data_3) / (data_2 + data_3);
 let resu_2 = data_1 / (data_2 + data_3);
@@ -521,9 +876,125 @@ const input_voltage_data = document.getElementById('input_voltage').value;
 const resistance_r1_data = document.getElementById('resistance_r1').value;
 const resistance_r2_data = document.getElementById('resistance_r2').value; 
 
-const data_1 = parseFloat(input_voltage_data, 10);
-const data_2 = parseFloat(resistance_r1_data, 10);
-const data_3 = parseFloat(resistance_r2_data, 10);
+let data_1 = parseFloat(input_voltage_data, 10);
+let data_2 = parseFloat(resistance_r1_data, 10);
+let data_3 = parseFloat(resistance_r2_data, 10);
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_voltage = document.getElementById('input_volt');
+let selectedValue_of_input_voltage = list_of_input_voltage.options[list_of_input_voltage.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_voltage === "мВ") {
+  data_1 /= 1000;
+
+}
+
+if (selectedValue_of_input_voltage === "В") {
+  data_1 *= 1;
+
+}
+
+if (selectedValue_of_input_voltage === "мкВ") {
+  data_1 /= 1000000;
+  
+}
+
+if (selectedValue_of_input_voltage === "кВ") {
+  data_1 *= 1000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r1 = document.getElementById('input_resistance_r1');
+let selectedValue_of_input_resistance_r1 = list_of_input_resistance_r1.options[list_of_input_resistance_r1.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r1 === "Ом") {
+  data_2 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "кОм") {
+  data_2 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r1 === "МОм") {
+  data_2 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r1 === "ГОм") {
+  data_2 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+let list_of_input_resistance_r2 = document.getElementById('input_resistance_r2');
+let selectedValue_of_input_resistance_r2 = list_of_input_resistance_r2.options[list_of_input_resistance_r2.selectedIndex].value;
+
+
+
+if (selectedValue_of_input_resistance_r2 === "Ом") {
+  data_3 *= 1;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "кОм") {
+  data_3 *= 1000;
+
+}
+
+if (selectedValue_of_input_resistance_r2 === "МОм") {
+  data_3 *= 1000000;
+  
+}
+
+if (selectedValue_of_input_resistance_r2 === "ГОм") {
+  data_3 *= 1000000000;
+  
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 let resu_1 = (data_1 * data_3) / (data_2 + data_3);
 let resu_2 = data_1 / (data_2 + data_3);
@@ -574,21 +1045,6 @@ let resu_5 = ((data_1 / (data_2 + data_3)) * data_3) * (data_1 / (data_2 + data_
 form.addEventListener("reset", () => {
   form.reset();
 
-  const volt_out_show = document.querySelector('#result');
-  const volt_out_sample = 0;
-  volt_out_show.textContent = volt_out_sample.toFixed(0);
-
-  const cur_out_show = document.querySelector('#result_current');
-  const cur_out_sample = 0;
-  cur_out_show.textContent = cur_out_sample.toFixed(0);
-
-  const power_1_out_show = document.querySelector('#result_power_1');
-  const power_1_out_sample = 0;
-  power_1_out_show.textContent = power_1_out_sample.toFixed(0);
-
-  const power_2_out_show = document.querySelector('#result_power_2');
-  const power_2_out_sample = 0;
-  power_2_out_show.textContent = power_2_out_sample.toFixed(0);
 });
 
 
