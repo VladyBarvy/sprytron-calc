@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="expi.css">
   <title>Document</title>
 
     <!-- Bootstrap CSS -->
@@ -12,21 +13,83 @@
 </head>
 <body>
   
-<!--
-  <form>
+<div style = "text-align: center;">
+
+  <!--
+  <form  style="margin-bottom: 20px;">
+    <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+      <label for="output_resistance_show">Номер телефона</label> 
+    </div>
     <input type="text" class="phone" name="phone" value="">
     <input type="submit" class="submit" disabled value="Save">
   </form>
-  -->
+-->
 
-  <div class="container m-3">
-    <form class="form-inline">
-      <input type="number" required="required" class="form-control mr-3" name="number">
-      <input type="submit" class="btn btn-primary mr-3" value="plus">
-      <button type="reset" class="btn btn-outline-primary">reset</button>
-    </form>
-    <div id="result">0</div>
-  </div>
+  <div>-----------------------------------------------------------------------------------------------------</div>
+
+
+
+  <form id="expir">
+
+    <div id="watchOne">
+      <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+        <label for="output_voltage_show">Напряжение</label> 
+      </div>
+
+      <input type="number" name="voltage" id="total_volt" step="0.000001" style="width: 170px; height: 30px; "/>
+      
+      <select name="select" style="max-width:90%;" id = "out_volt">
+        <option атрибуты>В</option>
+        <option атрибуты>мВ</option>
+        <option атрибуты>кВ</option> 
+      </select>
+    </div>
+
+
+
+    <div id="watchTwo" style="margin-bottom: 20px;">
+      <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+        <label for="output_resistance_show">Сопротивление</label> 
+      </div>
+
+      <input type="number" name="resistance" id="total_res" step="0.000001" style="width: 170px; height: 30px; "/>
+      
+      <select name="select" style="max-width:90%;" id = "out_res">
+        <option атрибуты>Ом</option>
+        <option атрибуты>мкОм</option>
+        <option атрибуты>мОм</option>
+        <option атрибуты>кОм</option> 
+        <option атрибуты>МОм</option> 
+        <option атрибуты>ГОм</option> 
+      </select>
+    </div>
+
+
+    <div class="button-row" id="button_style">
+      <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+    </div>
+
+
+    <div id="watchThree" style="margin-top: 20px;">
+      <p>-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/</p>
+      <div style="font-family: 'Century Gothic', sans-serif;">
+        <label for="output_current_show">Расчётный ток</label> 
+      </div>
+
+      <input type="number" name="current" id="total_cur" step="0.000001" style="width: 170px; height: 30px; "/>
+      
+      <select name="select" style="max-width:90%;" id = "out_cur">
+        <option атрибуты>А</option>
+        <option атрибуты>мкА</option>
+        <option атрибуты>мА</option>  
+        <option атрибуты>кА</option> 
+      </select>
+      <p>-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/</p>
+    </div>
+
+  </form>  
+
+</div> 
 
   <script src="expi.js"></script>
 

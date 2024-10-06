@@ -1,0 +1,30 @@
+
+.button {
+  display: inline-block;
+  background: #3ba0ff;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 100;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+}
+
+
+
+
+.button:hover {
+  background-color: #2c39f3; /* Цвет фона при наведении */
+ }
+
+
+.button-row {
+  display: inline-block;
+  /*margin-right: 50px; */
+}
