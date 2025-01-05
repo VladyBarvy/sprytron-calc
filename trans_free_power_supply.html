@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_trans_free_PS.css">
+    <title>Бестрансформаторный блок питания</title>
+</head>
+<body>
+    
+    <!-- -->
+<div class="parent">
+      
+    
+  <table  class ="table"  >  
+      
+    <div class="header-h1">
+      <a href="index.html" style="text-decoration: none;"><h1 class="change-text">
+        <div>БЕСТРАНСФОРМАТОРНЫЙ</div>
+        <div>БЛОК ПИТАНИЯ</div>
+      </h1></a>
+      
+    </div>
+
+      <!--  border="1"  -->
+      
+    <tr>
+  
+<!-- align="center" -->
+
+
+      <th text-align = "center" >  
+          <form id="form">
+
+            <img src="images\led_1.JPG" alt="led_1">
+
+
+
+
+            <div class="forms_style_edition">
+
+
+              <div id="stepOne">
+                <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="input_voltage">Напряжение питания</label>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <input name="input_voltage_name" class="form_style" id="input_voltage" type="number" step="0.000001"  required> <b style="font-family: 'Century Gothic', sans-serif;">В</b>
+ 
+                </div>
+
+
+              </div>
+        
+
+
+              <div id="stepTwo">
+                <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                  <label for="led_voltage">Прямое напряжение светодиода</label>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <input name="led_voltage_name" class="form_style" id="led_voltage" type="number" step="0.000001" required> <b style="font-family: 'Century Gothic', sans-serif;">В</b>
+                  
+
+                </div>
+              </div>
+
+
+
+
+
+
+              <div id="stepThree">
+                <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
+                  <label for="led_current">Прямой ток светодиода</label>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <input name="current_name" class="form_style" id="led_current" type="number" step="0.000001" required> <b style="font-family: 'Century Gothic', sans-serif;">мА</b>
+
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="button-row" id="button_style">
+              <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+
+              <button class="button" type="reset" id="button_ochistit">Очистить</button>
+            </div>
+
+
+
+                
+            <div class="answers_style_edition" id="answers">
+
+
+
+
+
+
+
+              <div id="watchOne">
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="output_resistance_show">Сопротивление</label> 
+                </div>
+
+
+                <div style="margin-bottom: 20px;">
+                  <input type="number" name="total_power" id="led_resistance_result" step="0.000001" style="width: 200px; height: 20px; margin-bottom: 20px;"/> <b style=" font-family: 'Century Gothic', sans-serif;">Ом</b>
+                  <!-- <input name="current_name" class="form_style" id="led_resistance_result" type="number"  required> <b style=" font-family: 'Century Gothic', sans-serif;">Ом</b> -->
+                </div>
+
+              </div>
+
+
+
+
+
+              <div id="watchTwo">
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="led_power_show">Мощность рассеивания на светодиоде</label> 
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <!-- <input name="current_name" class="form_style" id="led_power_result" type="number"  required> <b style="font-family: 'Century Gothic', sans-serif;">Вт</b> -->
+                  <input type="number" name="total_power" id="led_power_result" step="0.000001" style="width: 200px; height: 20px; margin-bottom: 20px;"/> <b style=" font-family: 'Century Gothic', sans-serif;">Вт</b>
+                </div>
+ 
+              </div>
+
+
+
+
+              <div id="watchThree">
+                <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
+                  <label for="resistor_power_show">Мощность рассеивания на резисторе</label> 
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                  <!-- <input name="current_name" class="form_style" id="led_power_result" type="number"  required> <b style="font-family: 'Century Gothic', sans-serif;">Вт</b> -->
+                  <input type="number" name="total_power" id="resistor_power_result" step="0.000001" style="width: 200px; height: 20px; margin-bottom: 20px;"/> <b style=" font-family: 'Century Gothic', sans-serif;">Вт</b>
+                </div>
+ 
+              </div>
+
+
+
+
+            </div>
+
+          </form>
+      </th>
+
+    </tr>
+
+
+
+
+    
+
+
+  </table>
+
+
+
+</div>
+
+
+
+      
+      <script src="trans_free_PS.js"></script>
+
+
+
+
+</body>
+</html>

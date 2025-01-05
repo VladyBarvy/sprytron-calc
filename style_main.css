@@ -1,10 +1,62 @@
-.header-h1 {
+/* .header-h1 {
     font-size: 20px;
     font-weight: 600;
     font-family: 'Century Gothic', sans-serif;
     color: #3ba0ff;
     text-transform: uppercase;
+} */
+
+.header-h1 {
+    /* background: #E4E5D2; */
+    padding: 50px 20px;
+    text-align: center;
 }
+
+.header-h1 h1 {
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: bold;
+    position: relative;
+    color: #3ba0ff;
+    font-size: 3em;
+    /* font-weight: normal; */
+    line-height: 1;
+    padding: 1px 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.header-h1 h1:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 200%;
+    border-radius: 50%/30%;
+    border: 6px solid #3ba0ff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+
+h1.change-text {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transition: 1s;
+    text-align: center;
+}
+
+h1.change-text:hover {
+    color: #f652e8;
+    transform: scale(1.1);
+}
+
+
+
+
+
 
 
 
@@ -17,57 +69,23 @@
 }
 
 
-a
-{
-font-family: 'Century Gothic', sans-serif;
-color: #3ba0ff;
+a {
+    font-family: 'Century Gothic', sans-serif;
+    color: #3ba0ff;
 }
 
-
-
-
-
-
-h1.change-text{
-    -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-            transition: 1s; 
-            text-align: center;  
-  }
-  h1.change-text:hover{
-    color: #f652e8; /* Меняем цвет текста */
-    transform: scale(1.2); 
-  }
-       
-  
-  
-/*
-
-.gain-center{
-    transition: 1s; 
-    text-align: center; 
-  }
-  .gain-center:hover {
-    transform: scale(1.2); 
-  }
-  */
-  
 
 
 .table {
 
     border-radius: 10px;
     box-shadow: 0 0 10px 5px #1696ff;
-    
+
     padding: 10px 10px 10px 10px;
     margin: 20px auto;
 
-/*
-    width: 800px;
-    height: 800px;
-*/
     background: #ffffff;
-    
+
 }
 
 
@@ -110,17 +128,13 @@ h1.change-text{
 
 
 .button:hover {
-    background-color: #212ee6; /* Цвет фона при наведении */
+    background-color: #212ee6;
+    /* Цвет фона при наведении */
 }
 
 
 
 .table_cell {
     width: 160px;
-    height:100px;
+    height: 100px;
 }
-
-  
-
-
-
