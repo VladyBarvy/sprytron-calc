@@ -1,0 +1,172 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="thermistor_color.css">
+  <title>Калькулятор цветовой маркировки терморезисторов</title>
+</head>
+
+<body>
+  <div class="parent">
+    <table class="table">
+      <div class="header-h1">
+        <a href="index.html" style="text-decoration: none;">
+          <h1 class="change-text">КАЛЬКУЛЯТОР ЦВЕТОВОЙ МАРКИРОВКИ ТЕРМОРЕЗИСТОРОВ</h1>
+        </a>
+      </div>
+      <tr>
+        <th align="center">
+          <form id="form">
+            <div class="forms_style_edition">
+              <div id="stepOne">
+                <label for="color1">Первая полоса</label>
+                <select id="color1" class="form_style">
+                  <option value="0">Черный</option>
+                  <option value="1">Коричневый</option>
+                  <option value="2">Красный</option>
+              
+                </select>
+              </div>
+          
+            </div>
+            <div class="button-row" id="button_style">
+              <button class="button" type="submit" id="button_rasschitat">Рассчитать</button>
+              <button class="button" type="reset" id="button_ochistit">Очистить</button>
+            </div>
+            <div class="answers_style_edition" id="answers">
+              <div id="watchOne">
+                <label for="resistance_show">Сопротивление</label>
+                <input type="text" id="resistance_show" readonly>
+              </div>
+            </div>
+          </form>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <script src="thermistor_color.js"></script>
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="thermistor_color.css">
+  <title>Калькулятор цветовой маркировки терморезисторов</title>
+</head>
+
+<body>
+  <div class="parent">
+    <table class="table">
+      <div class="header-h1">
+        <a href="index.html" style="text-decoration: none;">
+          <h1 class="change-text">ЦВЕТОВАЯ МАРКИРОВКА <br> ТЕРМОРЕЗИСТОРОВ</h1>
+        </a>
+      </div>
+      <tr>
+        <th>
+          <form id="form">
+
+            <img src="images\color_thermistor.jpg" alt="color_thermistor">
+
+            <div class="forms_style_edition">
+              <div id="stepOne" class="form-group">
+                <label for="color1">Первая полоса</label>
+                <select id="color1" class="form_style">
+                  <option value="0">Золотой</option>
+                  <option value="1">Серебряный</option>
+                  <option value="2">Чёрный</option>
+                  <option value="3">Коричневый</option>
+                  <option value="4">Красный</option>
+                  <option value="5">Оранжевый</option>
+                  <option value="6">Жёлтый</option>
+                  <option value="7">Зелёный</option>
+                  <option value="8">Синий</option>
+                  <option value="9">Фиолетовый</option>
+                  <option value="10">Серый</option>
+                  <option value="11">Белый</option>
+                </select>
+              </div>
+              
+              <div id="stepTwo" class="form-group">
+                <label for="color1">Вторая полоса</label>
+                <select id="color1" class="form_style">
+                  <option value="0">Золотой</option>
+                  <option value="1">Серебряный</option>
+                  <option value="2">Чёрный</option>
+                  <option value="3">Коричневый</option>
+                  <option value="4">Красный</option>
+                  <option value="5">Оранжевый</option>
+                  <option value="6">Жёлтый</option>
+                  <option value="7">Зелёный</option>
+                  <option value="8">Синий</option>
+                  <option value="9">Фиолетовый</option>
+                  <option value="10">Серый</option>
+                  <option value="11">Белый</option>
+                </select>
+              </div>
+
+              <div id="stepThree" class="form-group">
+                <label for="color1">Третья полоса</label>
+                <select id="color1" class="form_style">
+                  <option value="0">Золотой</option>
+                  <option value="1">Серебряный</option>
+                  <option value="2">Чёрный</option>
+                  <option value="3">Коричневый</option>
+                  <option value="4">Красный</option>
+                  <option value="5">Оранжевый</option>
+                  <option value="6">Жёлтый</option>
+                  <option value="7">Зелёный</option>
+                  <option value="8">Синий</option>
+                  <option value="9">Фиолетовый</option>
+                  <option value="10">Серый</option>
+                  <option value="11">Белый</option>
+                </select>
+              </div>
+
+              <div id="stepFour" class="form-group">
+                <label for="color1">Четвёртая полоса</label>
+                <select id="color1" class="form_style">
+                  <option value="0">Золотой</option>
+                  <option value="1">Серебряный</option>
+                  <option value="2">Чёрный</option>
+                  <option value="3">Коричневый</option>
+                  <option value="4">Красный</option>
+                  <option value="5">Оранжевый</option>
+                  <option value="6">Жёлтый</option>
+                  <option value="7">Зелёный</option>
+                  <option value="8">Синий</option>
+                  <option value="9">Фиолетовый</option>
+                  <option value="10">Серый</option>
+                  <option value="11">Белый</option>
+                </select>
+              </div>
+            </div>
+            <div class="button-row" id="button_style">
+              <button class="button" type="submit" id="button_rasschitat">Рассчитать</button>
+              <button class="button" type="reset" id="button_ochistit">Очистить</button>
+            </div>
+            <div class="answers_style_edition" id="answers">
+              <div id="watchOne" class="form-group">
+                <label for="resistance_show">Сопротивление</label>
+                <input type="text" id="resistance_show" readonly>
+              </div>
+            </div>
+          </form>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <script src="thermistor_color.js"></script>
+</body>
+
+</html>
