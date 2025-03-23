@@ -357,17 +357,49 @@ h1.change-text:hover {
 
 
 
-.form_style {
+/* .form_style { */
   /* resize: none; */
-  width: 200px;
-  height: 10px;
+  /* width: 200px; */
+  /* height: 10px; */
 
 
   /* background: #f6f6f6; */
   /* border: 1px solid #cecece; */
   /*border-radius: 8px 0 0 0;*/
   /* padding: 8px 0 8px 10px; */
+/* } */
+
+
+.form_style {
+  resize: none;
+  width: 200px;
+  height: 10px;
+
+  
+  background: #f6f6f6;
+  border: 1px solid #cecece;
+  /*border-radius: 8px 0 0 0;*/
+  padding: 8px 0 8px 10px;
+ }
+
+
+
+
+
+ .result-box {
+  /* display: inline-block; */
+  
+  padding: 8px 12px; /* Отступы внутри рамки */
+  border: 1px solid #ccc; /* Рамка */
+  border-radius: 4px; /* Закругленные углы */
+  background-color: #f9f9f9; /* Фон */
+  font-family: Arial, sans-serif; /* Шрифт */
+  font-size: 16px; /* Размер текста */
+  color: #333; /* Цвет текста */
+  cursor: text; /* Курсор как у текстового поля */
+  width: 170px; height: 15px;
 }
+
 
 
 
@@ -394,6 +426,10 @@ h1.change-text:hover {
   background: #ffffff;
 
 }
+
+
+
+
 
 
 
