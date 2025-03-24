@@ -1,59 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="ru">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="thermistor_color.css">
-  <title>Калькулятор цветовой маркировки терморезисторов</title>
-</head>
-
-<body>
-  <div class="parent">
-    <table class="table">
-      <div class="header-h1">
-        <a href="index.html" style="text-decoration: none;">
-          <h1 class="change-text">КАЛЬКУЛЯТОР ЦВЕТОВОЙ МАРКИРОВКИ ТЕРМОРЕЗИСТОРОВ</h1>
-        </a>
-      </div>
-      <tr>
-        <th align="center">
-          <form id="form">
-            <div class="forms_style_edition">
-              <div id="stepOne">
-                <label for="color1">Первая полоса</label>
-                <select id="color1" class="form_style">
-                  <option value="0">Черный</option>
-                  <option value="1">Коричневый</option>
-                  <option value="2">Красный</option>
-              
-                </select>
-              </div>
-          
-            </div>
-            <div class="button-row" id="button_style">
-              <button class="button" type="submit" id="button_rasschitat">Рассчитать</button>
-              <button class="button" type="reset" id="button_ochistit">Очистить</button>
-            </div>
-            <div class="answers_style_edition" id="answers">
-              <div id="watchOne">
-                <label for="resistance_show">Сопротивление</label>
-                <input type="text" id="resistance_show" readonly>
-              </div>
-            </div>
-          </form>
-        </th>
-      </tr>
-    </table>
-  </div>
-  <script src="thermistor_color.js"></script>
-</body>
-
-</html> -->
-
-
-
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -61,40 +5,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="thermistor_color.css">
+  <link rel="icon" type="image/x-icon" href="images\icon_3.ico">
+
   <title>Калькулятор цветовой маркировки терморезисторов</title>
+
+  <style>
+    /* Стиль для уменьшенного изображения */
+    #preview-img {
+      width: 320px;
+      height: 272px;
+      object-fit: cover;
+      cursor: zoom-in;
+      border: 1px solid #ccc;
+    }
+
+    /* Контейнер для полноэкранного режима */
+    #fullscreen-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      cursor: zoom-out;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Изображение в полноэкранном режиме */
+    #fullscreen-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+  </style>
+
+
 </head>
 
 <body>
   <div class="parent">
     <table class="table">
+
+
       <div class="header-h1">
         <a href="index.html" style="text-decoration: none;">
           <h1 class="change-text">ЦВЕТОВАЯ МАРКИРОВКА <br> ТЕРМОРЕЗИСТОРОВ</h1>
         </a>
       </div>
+
+
+
+      
       <tr>
         <th>
           <form id="form">
 
-            <img src="images\color_thermistor.jpg" alt="color_thermistor">
+            <!-- <img src="images/color_thermistor.jpg" alt="color_thermistor"> -->
+            <!-- <img src="images/table_ntc_mark2.JPG" alt="color_thermistor"> -->
 
 
 
-            <!-- <div class="forms_style_edition">
 
-              <div id="stepOne">
 
-                <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
-                  <label for="input_voltage">Напряжение питания</label>
-                </div>
-  
-                <div style="margin-bottom: 20px;">
-                  <input name="input_voltage_name" class="form_style" id="input_voltage" type="number" step="0.000001"  required> <b style="font-family: 'Century Gothic', sans-serif;">В</b>
-                </div>
-  
-  
-              </div>
-            </div> -->
+
+            <!-- Уменьшенное изображение (превью) -->
+            <img id="preview-img" src="images/table_ntc_mark.JPG" alt="Thermistor Color Chart"
+              onclick="openFullscreen()">
+
+            <!-- Контейнер для полноэкранного режима -->
+            <div id="fullscreen-container" onclick="closeFullscreen()">
+              <img id="fullscreen-img" src="" alt="Thermistor Color Chart (Fullscreen)">
+            </div>
+
+            <script>
+              const previewImg = document.getElementById('preview-img');
+              const fullscreenContainer = document.getElementById('fullscreen-container');
+              const fullscreenImg = document.getElementById('fullscreen-img');
+
+              // Открыть полноэкранный режим
+              function openFullscreen() {
+                // Убедимся, что src полноэкранного изображения установлен
+                fullscreenImg.src = previewImg.src;
+
+                // Показываем контейнер
+                fullscreenContainer.style.display = 'flex';
+
+                // Ждём загрузки изображения перед fullscreen
+                fullscreenImg.onload = function () {
+                  if (fullscreenContainer.requestFullscreen) {
+                    fullscreenContainer.requestFullscreen();
+                  } else if (fullscreenContainer.webkitRequestFullscreen) {
+                    fullscreenContainer.webkitRequestFullscreen();
+                  }
+                };
+              }
+
+              // Закрыть полноэкранный режим
+              function closeFullscreen() {
+                if (document.exitFullscreen) {
+                  document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen();
+                }
+                fullscreenContainer.style.display = 'none';
+              }
+
+              // Закрыть по Esc
+              document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                  closeFullscreen();
+                }
+              });
+            </script>
+
+
+
 
 
 
@@ -108,7 +136,7 @@
                   <label for="input_voltage">Первая полоса</label>
                 </div>
 
-                <select name="select" style="width: 200px; height: 25px; margin-bottom: 10px;" id="color1" >
+                <select name="select" style="width: 200px; height: 25px; margin-bottom: 10px;" id="color1">
                   <option атрибуты>Чёрный</option>
                   <option атрибуты>Коричневый</option>
                   <option атрибуты>Красный</option>
@@ -125,14 +153,14 @@
 
 
 
-              
+
               <div id="stepTwo" class="form-group">
 
                 <div style="margin-bottom: 5px; font-family: 'Century Gothic', sans-serif;">
                   <label for="input_voltage">Вторая полоса</label>
                 </div>
 
-                <select id="color2" style="width: 200px; height: 25px; margin-bottom: 10px;" >
+                <select id="color2" style="width: 200px; height: 25px; margin-bottom: 10px;">
                   <option атрибуты>Чёрный</option>
                   <option атрибуты>Коричневый</option>
                   <option атрибуты>Красный</option>
@@ -149,7 +177,7 @@
 
 
               <div id="stepThree" class="form-group">
-                
+
                 <div style="margin-bottom: 5px; font-family: 'Century Gothic', sans-serif;">
                   <label for="input_voltage">Третья полоса</label>
                 </div>
@@ -185,18 +213,37 @@
 
 
             <div class="button-row" id="button_style">
-              <button class="button" type="submit" id="button_rasschitat">Рассчитать</button>
+              <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
               <button class="button" type="reset" id="button_ochistit">Очистить</button>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="answers_style_edition" id="answers">
               <div id="watchOne" class="form-group">
 
 
                 <div style="margin-bottom: 10px; margin-top: 20px; font-family: 'Century Gothic', sans-serif;">
-                  <label for="output_resistance_show">Сопротивление</label> 
+                  <label for="output_resistance_show">Сопротивление</label>
                 </div>
-                <div style="margin-bottom: 20px;" >
-                  <input type="text" id="resistance_show" style="width: 200px; height: 20px; margin-bottom: 20px;" readonly>  <b style=" font-family: 'Century Gothic', sans-serif;">Ом</b>
+                <div style="margin-bottom: 20px;">
+                  <input type="text" id="resistance_show" style="width: 200px; height: 20px; margin-bottom: 20px;"
+                    readonly> <b style=" font-family: 'Century Gothic', sans-serif;">Ом</b>
                   <!-- <span class="result-box">
                     <b id="resistance_show" style=" font-family: 'Century Gothic', sans-serif;"></b>
                     

@@ -6,6 +6,9 @@ const app = () => {
   let data_3 = 0;
   let data_4 = '';
 
+
+
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -115,11 +118,11 @@ const app = () => {
 
     // Расчёт сопротивления
     //let resistance = (((data_1 * 10000) + (data_2 * 1000)) * data_3);
-    let resistance = (((data_1 * 10) + data_2) * data_3);
+    let resistance = (((data_1 * 10) + data_2) * 1000) * data_3;
 
     document.getElementById('resistance_show').value = resistance + `${data_4}`;
     //document.getElementById('resistance_show').textContent = resistance + `${data_4}`;
-    
+
   });
 
   form.addEventListener("reset", () => {
