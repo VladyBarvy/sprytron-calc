@@ -31,6 +31,8 @@ font-family: 'Century Gothic', sans-serif;
 color: #3ba0ff;
 text-transform: uppercase;
 
+overflow: hidden;
+white-space: nowrap;
 }
 
 
