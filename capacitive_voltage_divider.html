@@ -1,85 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_CVD.css">
-    <title>Емкостной делитель напряжения</title>
 
-    <meta name="description" content="Онлайн калькулятор, расчёт делителя напряжения на конденсаторах, расчёт емкостного делителя напряжения">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_CVD.css">
+  <title>Емкостной делитель напряжения</title>
+
+  <style>
+    /* Стиль для уменьшенного изображения */
+    #preview-img {
+      width: 320px;
+      height: 216px;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+  </style>
+
+  <meta name="description"
+    content="Онлайн калькулятор, расчёт делителя напряжения на конденсаторах, расчёт емкостного делителя напряжения">
 </head>
+
 <body>
-    
-    <!-- -->
-<div class="parent">
-      
-    
-  <table  class ="table"  >  
-      
-    <div class="header-h1">
-      <a href="index.html" style="text-decoration: none;"><h1 class="change-text">ЕМКОСТНОЙ ДЕЛИТЕЛЬ НАПРЯЖЕНИЯ</h1></a>
-    </div>
+
+  <!-- -->
+  <div class="parent">
+
+
+    <table class="table">
+
+      <div class="header-h1">
+        <a href="index.html" style="text-decoration: none;">
+          <h1 class="change-text">ЕМКОСТНОЙ ДЕЛИТЕЛЬ НАПРЯЖЕНИЯ</h1>
+        </a>
+      </div>
 
       <!--  border="1"  -->
-      
-    <tr>
-  
 
-  
-  <!-- 
+      <tr>
+
+
+
+        <!-- 
       <th>  
         <img src="images\res_dev_1.png" alt="Resistor Devider">
       </th>
 -->
 
-      <th align="center">  
+        <th align="center">
           <form id="form">
 
             <img src="images\cap_dev_1.png" alt="Capacitive Devider">
+
+            <img id="preview-img" src="images\formula_CVD_2.JPG" alt="Formula Capacitive Voltage Devider">
+
+
+
+
+            <!-- <div class="accordion">
+              <p class="toggle" id="toggle">Подробнее</p>
+              <div class="content" id="content">
+                <img src="images\formula_CVD_1.png" alt="Изображение" class="image">
+              </div>
+            </div> -->
+
+<!--            
+            <div class="accordion">
+              <div class="toggle-container">
+                  <p class="toggle" id="toggle">Подробнее</p>
+              </div>
+              <div class="content" id="content">
+                  <img src="images\formula_CVD_1.png" alt="Изображение" class="image">
+              </div>
+          </div> -->
+            
+<!-- https://vk.com/@web4ik_donnu-prostoi-akkordeon-s-ispolzovaniem-html-css-i-javascript -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             <div class="forms_style_edition">
 
               <div style="margin-bottom: 10px; font-family: 'Century Gothic', sans-serif;">
-                <label for="input_voltage_show"  >Входное напряжение Uвх</label>
+                <label for="input_voltage_show">Входное напряжение Uвх</label>
               </div>
 
 
               <!-- onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required       вместо step="0.00001"-->
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="input_voltage" type="number" step="0.00001"> <!-- <b style="font-family: 'Century Gothic', sans-serif;">В</b> -->
+                <input class="form_style" id="input_voltage" type="number" step="0.00001">
+                <!-- <b style="font-family: 'Century Gothic', sans-serif;">В</b> -->
 
 
-                <select name="select" style="max-width:70%;" id = "input_volt">
+                <select name="select" style="max-width:70%;" id="input_volt">
                   <option атрибуты>мВ</option>
-                  <option атрибуты>В</option> 
-                  <option атрибуты>кВ</option> 
+                  <option атрибуты>В</option>
+                  <option атрибуты>кВ</option>
                 </select>
 
               </div>
 
 
- 
 
 
-        
 
 
-<!--  onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required     вместо step="0.00001" -->
+
+
+              <!--  onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required     вместо step="0.00001" -->
               <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
                 <label for="capacity_1" id="capacity_1_lab">Ёмкость C1</label>
               </div>
 
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="capacity_r1" type="number" step="0.00001"> <!-- <b style="font-family: 'Century Gothic', sans-serif;">мкФ</b> -->
+                <input class="form_style" id="capacity_r1" type="number" step="0.00001">
+                <!-- <b style="font-family: 'Century Gothic', sans-serif;">мкФ</b> -->
 
-                
-                <select name="select" style="max-width:70%;" id = "input_capacity_1">
+
+                <select name="select" style="max-width:70%;" id="input_capacity_1">
                   <option атрибуты>пФ</option>
                   <option атрибуты>нФ</option>
                   <option атрибуты>мкФ</option>
                   <option атрибуты>мФ</option>
-                  <option атрибуты>Ф</option> 
+                  <option атрибуты>Ф</option>
                 </select>
 
               </div>
@@ -90,22 +148,23 @@
 
 
 
-<!-- onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required         вместо step="0.00001"-->
+              <!-- onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required         вместо step="0.00001"-->
 
 
               <div style="margin-bottom: 10px;  font-family: 'Century Gothic', sans-serif;">
-                <label for="capacity_2"  id="capacity_2_lab">Ёмкость С2</label>
+                <label for="capacity_2" id="capacity_2_lab">Ёмкость С2</label>
               </div>
 
               <div style="margin-bottom: 20px;">
-                <input class="form_style" id="capacity_r2" type="number" step="0.00001"> <!-- <b style="font-family: 'Century Gothic', sans-serif;">мкФ</b> -->
+                <input class="form_style" id="capacity_r2" type="number" step="0.00001">
+                <!-- <b style="font-family: 'Century Gothic', sans-serif;">мкФ</b> -->
 
-                <select name="select" style="max-width:70%;" id = "input_capacity_2">
+                <select name="select" style="max-width:70%;" id="input_capacity_2">
                   <option атрибуты>пФ</option>
                   <option атрибуты>нФ</option>
                   <option атрибуты>мкФ</option>
                   <option атрибуты>мФ</option>
-                  <option атрибуты>Ф</option> 
+                  <option атрибуты>Ф</option>
                 </select>
 
               </div>
@@ -122,90 +181,94 @@
 
 
             <div class="button-row" id="button_style">
-              <button class="button" type="submit" id="button_rasschitat" style="margin-right: 40px;">Рассчитать</button>
+              <button class="button" type="submit" id="button_rasschitat"
+                style="margin-right: 40px;">Рассчитать</button>
 
               <button class="button" type="reset" id="button_ochistit">Очистить</button>
             </div>
 
 
 
-                
+
             <div class="answers_style_edition" id="answers">
 
               <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
-                <label for="output_voltage_show">Выходное напряжение Uвых</label> 
+                <label for="output_voltage_show">Выходное напряжение Uвых</label>
               </div>
-                <!-- 
+              <!-- 
                 <b id="result">0</b>
                 -->
 
-                
-                  <input type="number" name="total" id="total" step="0.000001" style="width: 170px; height: 20px;"/>
-                
 
-
-                
-                  <select name="select" style="max-width:70%;" id = "out_volt">
-                    <option атрибуты>мВ</option>
-                    <option атрибуты>В</option> 
-                    <option атрибуты>кВ</option> 
-                  </select>
-                
+              <input type="number" name="total" id="total" step="0.000001" style="width: 170px; height: 20px;" readonly />
 
 
 
-                <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
-                  <label for="output_current_show">Ток через делитель I</label> 
-                </div>
+
+              <select name="select" style="max-width:70%;" id="out_volt">
+                <option атрибуты>мВ</option>
+                <option атрибуты>В</option>
+                <option атрибуты>кВ</option>
+              </select>
+
+
+
+
+              <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="output_current_show">Ток через делитель I</label>
+              </div>
 
 
               <!-- 
                 <b id="result_current">0</b>
               -->
 
-              <input type="number" name="total_cur" id="total_cur" step="0.000001" style="width: 170px; height: 20px; "/>
-                
-
-                
-                  <select name="select" style="max-width:90%;" id = "out_cur">
-                    <option атрибуты>мкА</option> 
-                    <option атрибуты>мА</option> 
-                    <option атрибуты>А</option> 
-                  </select>
+              <input type="number" name="total_cur" id="total_cur" step="0.000001"
+                style="width: 170px; height: 20px; " readonly />
 
 
 
-
-
-
-
-<!--  ////////////////////////////////////// -->
-                  <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
-                    <label for="output_current_show">Коэффициент деления</label> 
-                  </div>
-
-                  <input type="number" name="total_koeff_divid_cap" id="total_koeff_divid_cap" step="0.000001" style="width: 170px; height: 20px; "/>
-<!--  ////////////////////////////////////// -->
-                
+              <select name="select" style="max-width:90%;" id="out_cur">
+                <option атрибуты>мкА</option>
+                <option атрибуты>мА</option>
+                <option атрибуты>А</option>
+              </select>
 
 
 
 
 
-<!--  ////////////////////////////////////// -->
-                  <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
-                    <label for="output_reactive_show">Реактивное сопротивление</label> 
-                  </div>
 
-                  <input type="number" name="total_reactive" id="total_reactive" step="0.000001" style="width: 170px; height: 20px; margin-bottom: 20px;"/>
 
-                  <select name="select" style="max-width:90%;" id = "out_reactive">
-                    <option атрибуты>Ом</option> 
-                    <option атрибуты>кОм</option> 
-                    <option атрибуты>МОм</option>
-                    <option атрибуты>ГОм</option> 
-                  </select>
-<!--  ////////////////////////////////////// -->
+              <!--  ////////////////////////////////////// -->
+              <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="output_current_show">Коэффициент деления</label>
+              </div>
+
+              <input type="number" name="total_koeff_divid_cap" id="total_koeff_divid_cap" step="0.000001"
+                style="width: 170px; height: 20px; " readonly />
+              <!--  ////////////////////////////////////// -->
+
+
+
+
+
+
+              <!--  ////////////////////////////////////// -->
+              <div style="margin-bottom: 10px; margin-top: 10px; font-family: 'Century Gothic', sans-serif;">
+                <label for="output_reactive_show">Реактивное сопротивление</label>
+              </div>
+
+              <input type="number" name="total_reactive" id="total_reactive" step="0.000001"
+                style="width: 170px; height: 20px; margin-bottom: 20px;" readonly />
+
+              <select name="select" style="max-width:90%;" id="out_reactive">
+                <option атрибуты>Ом</option>
+                <option атрибуты>кОм</option>
+                <option атрибуты>МОм</option>
+                <option атрибуты>ГОм</option>
+              </select>
+              <!--  ////////////////////////////////////// -->
 
 
 
@@ -222,32 +285,32 @@
 
 
 
-      
+
 
           </form>
-      </th>
+        </th>
 
-    </tr>
-
-
-
-
-    
-
-
-  </table>
-
-
-
-</div>
+      </tr>
 
 
 
 
-      <script src="capacitive_voltage_divider.js"></script>
 
-<!-- Yandex.Metrika counter -->
-<!-- <script type="text/javascript" >
+
+
+    </table>
+
+
+
+  </div>
+
+
+
+
+  <script src="capacitive_voltage_divider.js"></script>
+
+  <!-- Yandex.Metrika counter -->
+  <!-- <script type="text/javascript" >
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
   m[i].l=1*new Date();
   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -263,8 +326,9 @@
   });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/90726880" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
-<!-- /Yandex.Metrika counter -->
+  <!-- /Yandex.Metrika counter -->
 
 
 </body>
+
 </html>
